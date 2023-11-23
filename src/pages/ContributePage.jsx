@@ -88,10 +88,7 @@ const ContributePage = (props) => {
     return true;
   }
 
-  const [submissionState, setSubmissionState] = React.useState(
-    JSON.parse(localStorage.getItem('submissionState')) ||
-    require('../static/default_card_data.json')
-  )
+  const [submissionState, setSubmissionState] = React.useState(require('../static/default_card_data.json'))
 
   const [selectedIndex, setSelectedIndex] = React.useState(costs.indexOf(submissionState.amount));
   const [perkState, setPerkState] = React.useState([

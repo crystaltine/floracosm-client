@@ -302,7 +302,7 @@ const AccountPage = () => {
 
 		// if loginStatus is false, redirect to login page
 		if (!loginStatus()) {
-			window.location.href = '/account/login';
+			window.location.href = '/account/login?ref=nologinstatus';
 			return;
 		}
 
@@ -319,7 +319,7 @@ const AccountPage = () => {
 		.then(res => {
 			if (res.status === 401) {
 				// Not logged in
-				window.location.href = '/account/login';
+				window.location.href = '/account/login?ref=authreject';
 			} else if (res.status >= 500) {
 				// console.error('Error getting user data:', res.error);
 				return;
