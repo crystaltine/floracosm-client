@@ -1,0 +1,29 @@
+.contribute-agreements-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+    width:100%;
+    font-size: 18px;
+}
+
+.main-agreements {
+    width:100%;
+    max-width: 100%;
+    display:flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.agreement-container {
+    width:100%;
+    box-sizing: border-box;
+}
+
+.agreement-container a {
+    color: black;
+    margin:0;
+    padding:0;
+}

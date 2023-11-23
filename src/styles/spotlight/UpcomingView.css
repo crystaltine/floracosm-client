@@ -1,0 +1,229 @@
+.sl-upcoming-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    position: relative;
+    padding: 0 !important;
+}
+.sl-upcoming-main {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr;
+    min-height: 100%;
+}
+
+/* This should be a chevron-ish shape pointing right */
+.sl-upcoming-left-shape {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-top: 150px solid transparent;
+    border-left: 100px solid red;
+    border-bottom: 150px solid transparent;
+}
+.sl-upcoming-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    background-color: white;
+}
+.sl-upcoming-num {
+    font-size: 36px;
+    font-weight: 800;
+    margin: auto 0;
+    z-index: 5;
+}
+
+.sl-upcoming-mid {
+    box-sizing: border-box;
+    height: 100%;
+    padding: min(20px, 8%) min(12px, 5%);
+}
+.sl-upcoming-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    padding: min(20px, 8%) min(12px, 5%);
+}
+
+.sl-winning-bid-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(120deg,#fff 70%, #eee 70%);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: -1px 1px 6px 3px #0002;
+}
+
+.sl-winning-bid-card hr {
+    width: 90%;
+    height: 1px;
+    background-color: #000;
+}
+
+.sl-winning-bid-icon {
+    height: 50px;
+}
+
+.sl-winning-bid-text-header {
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    font-family: var(--paragraphFont);
+}
+.sl-winning-bid-text {
+    font-size: 40px;
+    font-weight: 800;
+    margin: auto 0 5px 0;
+    padding: 0;
+    color: #000;
+    text-align: center;
+    font-family: Outfit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.sl-winning-bid-profilecontainer {
+    border: 1px solid rgba(228, 175, 0, 0.267);
+    border-radius: 8px;
+    max-width: 100%;
+    background-image: linear-gradient(120deg,#fffdc4, #ffe260, #fffdb8, #ffdd46);
+    box-shadow: 0 0 6px 1px #fffca0;
+    margin-bottom: auto;
+}
+.sl-winning-bid-timestamp {
+    padding: 0;
+    margin: 0;
+    margin-top: auto;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.sl-user-bid-price-setter {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+.sl-user-bid-options {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+}
+.sl-customamount-input {
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    outline: none;
+    font-family: Outfit, sans-serif;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0 5px;
+    border: 1px solid #0004;
+    border-radius: 8px;
+    text-align: center;
+}
+.sl-customamount-input::-webkit-inner-spin-button, .sl-customamount-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.sl-upcoming-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.sl-upcoming-timeleft {
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 20px;
+    border-radius: 5px;
+    margin: 0;
+    width: fit-content;
+}
+
+.sl-upcoming-right-subcontainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.sl-upcoming-highestbidder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: -1px 1px 6px 3px #0002;
+    padding: 5px 8px;
+    box-sizing: border-box;
+}
+.sl-upcoming-bidoptions {
+    width: 100%;
+}
+.sl-highest-bid-number {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+.sl-upcoming-yourbid-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+
+}
+.sl-upcoming-yourbid-number {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    text-align: center;
+}
+.sl-upcoming-yourbid-balance {
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.sl-upcoming-right-message {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    text-align: center;
+    width: 100%;
+}

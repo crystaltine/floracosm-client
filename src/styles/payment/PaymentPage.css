@@ -1,0 +1,105 @@
+.payment-page-content {
+    min-height: 100%;
+    box-sizing: border-box;
+    font-family: var(--paragraphFont);
+    display: flex;
+    justify-content: center;
+}
+
+.payment-preview {
+    width: 70%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(225deg, rgb(228, 32, 215), rgb(15, 182, 238))
+}
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 30%;
+    height: calc(100vh - var(--menuBarHeight));
+    overflow-y: auto;
+    padding: min(15px, 3vmin) min(30px, 5vmin);
+    gap: min(30px, 5vmin);
+}
+
+.payment-form {
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.extra-info h1 {
+    font-size: 36px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+.extra-info h2 {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.extra-info p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Small screens - wrap payment component to the bottom */
+@media screen and (max-width: 1025px) {
+    .payment-page-content {
+        flex-direction: column;
+    }
+    .payment-container {
+        width: 100% !important;
+        height: unset !important;
+    }
+    .payment-preview {
+        width: 100% !important;
+        overflow: hidden;
+    }
+}
+
+/* Image previewer & overflow stuff */
+.payment-image-editor {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    overflow: auto;
+}
+.payment-image-preview-pane {
+    overflow: visible;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+.payment-padding-provider {
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.payment-image-editor::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.payment-image-editor::-webkit-scrollbar-track {
+    background: transparent;
+}
+.payment-image-editor::-webkit-scrollbar-thumb {
+    background: rgba(207, 209, 211, 0.938);
+}
+.payment-image-editor::-webkit-scrollbar-thumb:hover {
+    background: rgba(208, 211, 213, 0.873);
+}
+.payment-image-editor::-webkit-scrollbar-corner {
+    background: transparent;
+}

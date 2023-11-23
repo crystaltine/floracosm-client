@@ -1,0 +1,56 @@
+.link-display-container {
+    display: flex;
+    height: 40px;
+    text-align: center;
+    font-family: var(--paragraphFont);
+    font-size: 20px;
+    font-weight: 400;
+    box-sizing: border-box;
+    background-color: #8884;
+    max-width: 100%;
+}
+.link-display-textbox {
+    font-family: var(--paragraphFont);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 10px;
+    border: none;
+    max-width: 100%;
+    color: white;
+    transition: all 0.3s ease 0s;
+    overflow-x: auto;
+}
+.link-display-text::-webkit-scrollbar {
+    display: none;
+}
+.link-display-textbox:focus {
+    outline: none;
+}
+.link-display-text {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.link-display-copy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-family: var(--paragraphFont);
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: none;
+    color: white;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+.link-display-copy-icon {
+    height: 20px;
+}

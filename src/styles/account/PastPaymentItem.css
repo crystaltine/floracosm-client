@@ -1,0 +1,29 @@
+.payment-history-item {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #0002;
+    box-shadow: -4px 4px 12px 0px #0002;
+    border-radius: 8px;
+}
+
+.phi-image {
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: -1px 1px 10px 0px #0002;
+
+}
+
+/* IMPORTANT - this must match the value in PastPaymentItem.jsx */
+@media screen and (max-width: 600px) {
+    .payment-history-item {
+        flex-direction: column;
+        gap: 10px;
+        align-items: unset;
+    }
+}

@@ -1,0 +1,97 @@
+.slc-container {
+    height: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slc-header {
+    user-select: none;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: var(--primaryColorBright);
+}
+
+.slc-scroll-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: 100%;
+}
+.slc-scroll-container::-webkit-scrollbar {
+    width: 10px;
+}
+.slc-scroll-container::-webkit-scrollbar-track {
+    background: #0000;
+}
+.slc-scroll-container::-webkit-scrollbar-thumb {
+    background: #0005;
+}
+.slc-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #0008;
+}
+
+.slc-messages-container {
+    color: black;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.slc-input-container {
+    width: 100%;
+    border-top: 1px solid #8883;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.slc-input {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    column-gap: 5px;
+    align-items: flex-end;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 1px solid #0005;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 8px;
+    transition: outline 0.1s;
+}
+.slc-input:focus-within {
+    outline: 3px solid var(--primaryColorFaded);
+}
+.slc-textarea {
+    font-size: 16px;
+    border-radius: 7px;
+    outline: none;
+    box-sizing: border-box;
+    flex-grow: 1;
+    resize: none;
+    border: none;
+    font-family: Mulish;
+    margin: auto 0;
+}
+.slc-textarea:focus {
+    border: none;
+    outline: none;
+}
+
+.slc-not-logged-in {
+    width: 100%;
+    font-size: 20px;
+}
+.slc-chat-loading {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+}

@@ -1,0 +1,24 @@
+.subscription-item-container {
+    background-image: url('../../assets/spacepic-v1.png');
+    background-size: cover;
+    background-position: 0% 90%;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+}
+
+.amount-span {
+    font-size: 50px;;
+    font-weight: 800;
+    color: rgb(224, 175, 0);
+}
+.period-span { 
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+.start-date-span {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+}

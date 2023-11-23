@@ -1,0 +1,49 @@
+.slcm-container {
+    display: flex;
+    width: 100%;
+    column-gap: 10px;
+    padding: 0;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.slcm-profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.slcm-text-container {
+    width: 100%;
+}
+.slcm-text-header {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.slcm-displayName {
+    font-size: 14px;
+    font-weight: 800;
+    color: black;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.slcm-timestamp {
+    font-size: 10px;
+    color: #888;
+}
+
+.slcm-text {
+    font-size: 14px;
+    color: black;
+}
+.slcm-text-noprofile {
+    font-size: 14px;
+    color: black;
+    margin-left: 40px;
+    margin-top: 5px;
+}

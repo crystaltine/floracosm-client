@@ -1,0 +1,20 @@
+[
+    {
+        "senderProfile": {
+            "displayName": "John Doe",
+            "username": "johndoe",
+            "avatarRef": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+        },
+        "text": "Hello World!",
+        "timestamp": "2018-01-01T00:00:00.000Z"
+    },
+    {
+        "senderProfile": {
+            "displayName": "Jane Doe",
+            "username": "janedoe",
+            "avatarRef": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+        },
+        "text": "HMMMMMMMMMM THIS IS A VERY LONG CHAT MESSAGE. DID YOU KNOW THAT THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG? ALSO, HERES THE PREAMBLE TO THE CONSTITUTION: We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.",
+        "timestamp": "2018-01-01T00:00:24.000Z"
+    }
+]

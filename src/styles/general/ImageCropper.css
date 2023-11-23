@@ -1,0 +1,64 @@
+.image-cropper-popup-backdrop {
+	position: fixed;
+	height: calc(100vh - var(--menuBarHeight));
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.392);
+	backdrop-filter: blur(5px);
+	z-index: 1000;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.ic-popup-body-container {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: visible;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.ic-popup-body {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    animation: grow 0.1s;
+	position: relative;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.crop-supercontainer {
+	position: relative;
+	width: 400px;
+	height: 400px;
+}
+.crop-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+/* This is an input type = range */
+.zoom-range {
+	width: 100%;
+}
+.zoom-range::-webkit-slider-thumb {
+	cursor: pointer;
+	background-color: var(--primaryColorBright);
+}

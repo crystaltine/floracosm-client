@@ -1,0 +1,57 @@
+.loadingbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Generated Spinner CSS */
+@keyframes ldio-mx77hswobgl {
+  0% {
+    top: 46px;
+    left: 46px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 8px;
+    left: 8px;
+    width: 76px;
+    height: 76px;
+    opacity: 0;
+  }
+}.ldio-mx77hswobgl div {
+  position: absolute;
+  border-width: 8px;
+  border-style: solid;
+  opacity: 1;
+  border-radius: 50%;
+  animation: ldio-mx77hswobgl 1s cubic-bezier(0,0.2,0.8,1) infinite;
+}.ldio-mx77hswobgl div:nth-child(1) {
+  border-color: var(--loadingColor1);
+  animation-delay: 0s;
+}
+.ldio-mx77hswobgl div:nth-child(2) {
+  border-color: var(--loadingColor2);
+  animation-delay: -0.5s;
+}
+.loadingio-spinner-ripple-zavvin6qy4 {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  overflow: hidden;
+  background: transparent;
+}
+.ldio-mx77hswobgl {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-mx77hswobgl div { box-sizing: content-box; }

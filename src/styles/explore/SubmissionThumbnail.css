@@ -1,0 +1,17 @@
+.submission-thumbnail {
+    position: absolute;
+    overflow: visible;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    /*transition: 0.1s;*/
+    z-index: 5;
+    border: none;
+    outline: none;
+    background-color: white; /* no transparent photos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

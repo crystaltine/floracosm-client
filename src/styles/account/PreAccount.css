@@ -1,0 +1,59 @@
+.login-page-content {
+    min-height: 100%;
+    display: flex;
+    padding: min(60px, 8%) min(40px, 5%);
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(225deg, rgb(228, 32, 215), rgb(15, 182, 238))
+}
+
+.login-page-content a {
+    text-decoration: none;
+    color: var(--primaryColorBright);
+    box-sizing: border-box;
+}
+
+.login-form-container {
+    padding: min(40px, 8%);
+    background-color: var(--primaryColor);
+    border-radius: 5px;
+    background-color: white;
+    width: min(400px, 100%);
+    box-sizing: border-box;
+    box-shadow: -3px 5px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-extralink {
+    width: fit-content;
+    text-decoration: none;
+    color: var(--primaryColorBright);
+    font-size: 14px;
+}
+
+.login-option-button {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.input-bottom-text {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+.--too-weak {
+    color: red;
+}
+.--weak {
+    color: rgb(221, 118, 0);
+}
+.--medium {
+    color: rgb(200, 181, 2);
+}
+.--strong {
+    color: rgb(7, 183, 7);
+}

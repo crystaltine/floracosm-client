@@ -1,0 +1,69 @@
+.page-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--primaryColorBright);
+    color:white;
+    font-family: var(--paragraphFont);
+    font-size: 14px;
+    padding:5px 20px;
+}
+
+.page-controls-pgnum {
+    border-radius: 0;
+    border: none;
+    text-align: center;
+}
+.page-control-number-input {
+    font-family: var(--paragraphFont);
+    font-size: 14px;
+    background-color: transparent;
+    width: 50px;
+    height: 20px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    outline: none;
+}
+
+.page-controls-search {
+    font-family: var(--paragraphFont);
+    font-size: 14px;
+    color: white;
+}
+.page-control-search-bar {
+    background-color: transparent;
+    font-family: var(--paragraphFont);
+    font-size: 14px;
+    color: white;
+    width: 150px;
+    height: 20px;
+    border-radius: 0;
+    border:none;
+    outline:none;
+    border-bottom: 2px solid white;
+    margin-right: 10px;
+}
+.page-control-search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.437);
+}
+
+.page-control-button {
+    height: 20px;
+    border-radius: 0.4rem;
+    border:none;
+    box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 15px;
+    font-family: var(--paragraphFont);
+    background-color: #000a11;
+    color:white;
+    cursor: pointer;
+}
+
+.page-control-button:hover {
+    background-color: #0532c6;
+    color:white;
+}

@@ -1,0 +1,32 @@
+.live-page-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 100%;
+    padding:0 20px;
+    min-height: 100%;
+    position:relative;
+}
+
+.explore-pagenav-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.explore-pagenav-button:hover {
+    background-color: var(--primaryColorBright)
+}
+.explore-pagenav-button-img {
+    height: 80px;
+    width: 80px;
+}
+.--r180 {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,84 @@
+.spotlight-page-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    height: 100%;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .spotlight-page-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.spotlight-left-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sl-mediatype-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.sl-initbid-info {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.sl-popup-timeleft {
+    color: black;
+    border: 2px solid #8884;
+    box-shadow: -1px 1px 3px 1px #8884;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 2px 40px;
+    box-sizing: border-box;
+}
+
+.sl-popup-bid-amounts {
+    text-align: right;
+}
+.sl-popup-bid-descriptor {
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+.sl-popup-bid-new {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--primaryColorBright);
+    text-shadow: 3px 3px 8px var(--primaryColorTransparent);
+}
+.sl-popup-bid-currhighest {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000a;
+}
+
+.sl-popup-watchcount {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.sl-popup-watchcount-number {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    margin-left: 5px;
+}

@@ -1,0 +1,104 @@
+.image-card {
+    border-radius: 10px;
+}
+
+.submission-preview-upload-area {
+    width: fit-content;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: 0.15s;
+    /*400 px default*/
+    position: relative;
+}
+.hovering-image {
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 5px var(--primaryColorBright);
+}
+.upload-input-element {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+}
+.submission-preview-img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1;
+}
+.submission-preview-img-shadow {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: -1px 1px 2px 0px #00000018;
+}
+
+.submission-preview-text {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Mulish;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+}
+.submission-preview-maintext {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: fit-content;
+}
+.displayName-text {
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.username-text {
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.amount-text {
+    box-sizing:border-box;
+    display: flex;
+    align-items: last baseline;
+    justify-content: space-between;
+    gap: 20px;
+    font-weight: 900;
+    margin:0;
+    padding:0;
+}
+
+.sp-postText {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Mulish;
+    overflow: auto;
+    word-wrap: break-word;
+    width: 100%;
+}
+.sp-postText::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.sp-postText::-webkit-scrollbar-track {
+    background: #dde;
+    border-radius: 1000px;
+}
+.sp-postText::-webkit-scrollbar-thumb {
+    background: var(--primaryColorBright);
+    border-radius: 1000px;
+}
+.sp-postText::-webkit-scrollbar-thumb:hover {
+    background: var(--primaryColorDark);
+}

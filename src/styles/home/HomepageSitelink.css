@@ -1,0 +1,93 @@
+.hpsl-wrapper {
+    text-decoration: none;
+    color: inherit;
+}
+.hpsl-wrapper:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 1200px) {
+    .hpsl-wrapper {
+        padding: 10px !important;
+        border-radius: 8px !important;
+        font-size: 0;
+        background-color: #fff !important;
+        margin: 0;
+    }
+    .hpsl-image {
+        height: 70px !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .hpsl-wrapper {
+        padding: 6px !important;
+        border-radius: 4px !important;
+    }
+    .hpsl-image {
+        height: 60px !important;
+    }
+}
+.hpsl-outline-provider {
+    padding: 10px;
+    background-image: linear-gradient(120deg,#fff 70%, #eee 70%);
+    border-radius: min(1vw, 5px);
+    min-width: 200px;
+    max-width: 400px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.hpsl-container {
+    border-radius: min(1vw, 5px);
+    border-width: 2px;
+    border-style: solid;
+    position: relative;
+    padding: 8px 15px;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.hpsl-title {
+    position: absolute;
+    user-select: none;
+    top: -7px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    line-height: 1;
+    text-align: center;
+    width: fit-content;
+    padding: 0 5px;
+    font-family: "Red Hat Display", Mulish;
+    font-size: 14px;
+    font-weight: 700;
+}
+.hpsl-image {
+    height: 100px;
+    margin: auto;
+}
+.hpsl-desc {
+    font-family: var(--paragraphFont);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+    .hpsl-image {
+        height: 60px;
+    }
+    .hpsl-desc {
+        font-size: 14px;
+    }
+    .htc-sitelinks { /* From ./Homepage.css */
+        padding: 20px 10px;
+    }
+    .htc-lookbelow {
+        display: none; /* There's literally just no space for this */
+    }
+}

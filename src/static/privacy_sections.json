@@ -1,0 +1,58 @@
+[
+    {
+        "display": "Collected Information",
+        "sectionID": "infocollect"
+    },
+    {
+        "display": "Processing of Information",
+        "sectionID": "infouse"
+    },
+    {
+        "display": "Legal Bases for Processing",
+        "sectionID": "legalbases"
+    },
+    {
+        "display": "Who We Share Information With",
+        "sectionID": "whoshare"
+    },
+    {
+        "display": "Cookies and Tracking",
+        "sectionID": "cookies"
+    },
+    {
+        "display": "Information Retention",
+        "sectionID": "inforetain"
+    },
+    {
+        "display": "Information Security",
+        "sectionID": "infosafe"
+    },
+    {
+        "display": "Your Privacy Rights",
+        "sectionID": "privacyrights"
+    },
+    {
+        "display": "Do-Not-Track Features",
+        "sectionID": "DNT"
+    },
+    {
+        "display": "U.S. Privacy Laws",
+        "sectionID": "uslaws"
+    },
+    {
+        "display": "Other Privacy Laws",
+        "sectionID": "otherlaws"
+    },
+    {
+        "display": "Policy Updates",
+        "sectionID": "policyupdates"
+    },
+    {
+        "display": "Contact Us",
+        "sectionID": "contact"
+    },
+    {
+        "display": "Manage or Delete Your Information",
+        "sectionID": "request"
+    }
+]

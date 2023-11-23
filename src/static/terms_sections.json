@@ -1,0 +1,114 @@
+[
+    {
+        "display": "Our Services",
+        "sectionID": "services"
+    },
+    {
+        "display": "Intellectual Property Rights",
+        "sectionID": "ip"
+    },
+    {
+        "display": "User Representations",
+        "sectionID": "userreps"
+    },
+    {
+        "display": "User Registration",
+        "sectionID": "userreg"
+    },
+    {
+        "display": "Products",
+        "sectionID": "products"
+    },
+    {
+        "display": "Purchases and Payment",
+        "sectionID": "purchases"
+    },
+    {
+        "display": "Refunds Policy",
+        "sectionID": "returnno"
+    },
+    {
+        "display": "Prohibited Activities",
+        "sectionID": "prohibited"
+    },
+    {
+        "display": "User Generated Contributions",
+        "sectionID": "ugc"
+    },
+    {
+        "display": "Contribution License",
+        "sectionID": "license"
+    },
+    {
+        "display": "Third Party Websites and Content",
+        "sectionID": "thirdparty"
+    },
+    {
+        "display": "Services Management",
+        "sectionID": "sitemanage"
+    },
+    {
+        "display": "Privacy Policy",
+        "sectionID": "ppyes"
+    },
+    {
+        "display": "Copyright Infringements",
+        "sectionID": "copyrightyes"
+    },
+    {
+        "display": "Term and Termination",
+        "sectionID": "terms"
+    },
+    {
+        "display": "Modifications and Interruptions",
+        "sectionID": "modifications"
+    },
+    {
+        "display": "Governing Law",
+        "sectionID": "law"
+    },
+    {
+        "display": "Dispute Resolution",
+        "sectionID": "disputes"
+    },
+    {
+        "display": "Corrections",
+        "sectionID": "corrections"
+    },
+    {
+        "display": "Disclaimer",
+        "sectionID": "disclaimer"
+    },
+    {
+        "display": "Limitations of Liability",
+        "sectionID": "liability"
+    },
+    {
+        "display": "Indemnification",
+        "sectionID": "indemnification"
+    },
+    {
+        "display": "User Data",
+        "sectionID": "userdata"
+    },
+    {
+        "display": "Electronic Communications, Transactions, and Signatures",
+        "sectionID": "electronic"
+    },
+    {
+        "display": "California Users and Residents",
+        "sectionID": "california"
+    },
+    {
+        "display": "Miscellaneous",
+        "sectionID": "misc"
+    },
+    {
+        "display": "Please Just Have Common Sense.",
+        "sectionID": "commonsense"
+    },
+    {
+        "display": "Contact Us",
+        "sectionID": "contact"
+    }
+]

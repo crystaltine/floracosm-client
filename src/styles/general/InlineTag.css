@@ -1,0 +1,14 @@
+.inline-tag-container {
+    border-radius: 1000px;
+    padding: 0.1em 0.5em;
+    border-style: solid;
+    box-sizing: border-box;
+    display: inline-block;
+    width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: auto 0;
+    pointer-events: none;
+    user-select: none;
+}

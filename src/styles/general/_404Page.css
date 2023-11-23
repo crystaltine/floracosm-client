@@ -1,0 +1,38 @@
+._404-body h1 {
+    font-family: var(--displayFont);
+    font-size: 100px;
+}
+
+._404-body h2 {
+    font-family: var(--displayFont);
+    font-size: 40px;
+}
+
+._404-body p {
+    font-family: var(--paragraphFont);
+    font-weight: 600;
+}
+
+._404-body-container {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/Page404_bg.jpeg');
+    background-position: 100% 50%;
+    background-size: cover;
+    min-height: 100%;
+    flex-grow: 1;
+    padding: 10px 20px;
+    gap: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+._404-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: fit-content;
+}

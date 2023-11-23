@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Are there refunds for submissions?",
+        "answer": "There are <b>no general refunds for submissions</b>. It's too difficult (mostly legally) to refund submissions once they have been processed; however, in extraordinary circumstances, feel free to <a class='link' href='#contact'>contact us</a> and we'll see if anything can be worked out."
+    },
+    {
+        "question": "Which research organizations do you fund?",
+        "answer": "This is currently an open question that will be determined once enough donations have been processed. We're looking at <b>well-known research labs and universities across the world</b>, and we hope to connect with experts to determine the most efficient usage of your contribution!"
+    },
+    {
+        "question": "What's the minimum amount I can donate?",
+        "answer": "Any whole dollar amount, so $1. Don't be ashamed of donating just a tiny bit - imagine if a million people just like you each donated $1..."
+    },
+    {
+        "question": "Can I donate in other currencies?",
+        "answer": "Yes! We accept any currency or payment method that Stripe supports. However, note that the amount you donate will be converted to $USD and rounded to the nearest integer when it is displayed on any public record."
+    },
+    {
+        "question": "I didn't catch my account verification email. How do I get another one?",
+        "answer": "Try logging in with the credentials you created the account with. If your email is still unverified, we will automatically send another verification over."
+    },
+    {
+        "question": "Any updates on the other two projects (Spotlight and Predictions)?",
+        "answer": "Spotlight was an idea that came to mind a few months after the original project idea, but the page is coming together. Predictions is a very recent idea that has not been started yet, but honestly it shouldn't take nearly as long to build as the other two projects."
+    },
+    {
+        "question": "Can I post advertisements or links on my submissions?",
+        "answer": "Yes, absolutely! You can use markdown in descriptions to include clickable links as well. Note that we still reserve the right to remove any submissions that may be inappropriate or violate any rules."
+    }
+]

@@ -1,0 +1,74 @@
+.sl-media-selector-container {
+    margin-top: 20px;
+}
+
+@keyframes floatup {
+    0% {
+        transform: translateY(30px);
+        opacity: 0.25;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.sl-yt-video-info {
+    display: flex;
+    column-gap: 10px;
+    animation: floatup 0.2s ease-out;
+    height: fit-content;
+}
+.sl-yt-video-previewer {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+}
+.sl-yt-video-text {
+    display: flex;
+    flex-direction: column;
+}
+.sl-yt-video-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+}
+.sl-yt-video-title:hover {
+    text-decoration: underline;
+}
+.sl-yt-video-channel {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+.sl-yt-video-channel:hover {
+    text-decoration: underline;
+}
+.sl-yt-video-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+    max-height: 100px;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
+.sl-yt-video-description::-webkit-scrollbar {
+    width: 8px;
+}
+.sl-yt-video-description::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.sl-yt-video-description::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+.sl-yt-video-description::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+.sl-yt-video-date {
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
+    margin-top: auto;
+}

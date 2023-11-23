@@ -1,0 +1,25 @@
+.locsel-container {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(16, 16, 17);
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.locsel-thumbnails-container {
+    position: relative;
+}
+
+.locsel-pan-content {
+    padding: 50px !important;
+}
+.locsel-pan-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(24, 24, 26);
+}

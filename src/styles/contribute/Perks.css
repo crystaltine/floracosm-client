@@ -1,0 +1,39 @@
+.perk-display-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width:100%;
+    font-size: 14px;
+    gap: 5px;
+}
+
+.perk-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 20px;
+    border-radius:5px;
+    transition-duration: 0.2s;
+}
+.perk-item-text-section {
+    text-align: right;
+    font-weight: 600;
+}
+.perk-item-cost-text {
+    font-weight: 1000;
+}
+
+.unlocked {
+    padding: 5px 10px 11px 8px; /* Padding differs due to inset shadow representing bevel */
+    box-shadow: -2px -6px 0 0 #0d0d0e47 inset;
+    cursor: pointer;
+}
+.unlocked:hover {
+    transform: scale(1.02);
+}
+
+.locked {
+    padding: 8px 9px;
+    cursor: default;
+}

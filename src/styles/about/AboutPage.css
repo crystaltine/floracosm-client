@@ -1,0 +1,108 @@
+.about-page-topbg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../../assets/about_page_bg.jpeg');
+    background-size: cover;
+    background-position: 100% 25%;
+    z-index: -1;
+}
+
+.about-page-content {
+    font-family: Mulish;
+    margin-top: max(80vh, 200px); /*Background*/
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 80px;
+    row-gap: 100px;
+    padding: 50px max(15px, 7%);
+    min-height: 100%;
+    position:relative;
+    background-color: white;
+    line-height: 1.5;
+}
+
+
+.about-page-content h1, .about-page-content h2, .about-page-content h3 {
+    font-family: var(--displayFont);
+    padding: 0;
+    margin: 0;
+}
+.about-page-content h1 {
+    font-weight: 800;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.about-page-content h2 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.about-page-content h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.about-section p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.about-left-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    row-gap: 80px;
+}
+
+.about-right-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.894);
+    backdrop-filter: blur(40px);
+    box-sizing: border-box;
+    border: 1px solid #00000020;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    height: fit-content;
+    gap: 20px;
+}
+
+.topic-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+}
+.topic-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.faq-container {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

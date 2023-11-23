@@ -1,0 +1,29 @@
+.checkbox-exterior {
+    padding:2px;
+    width: fit-content;
+    border: 1px solid rgba(0, 0, 0, 0.358);
+    border-radius: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.checkbox-fill-area {
+    width: 14px;
+    height: 14px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.filled {
+    background-color: rgba(0, 0, 0, 0.759);
+}
+.filled:hover {
+    background-color: #414346a7;
+}
+
+.empty {
+    background-color: transparent;
+}
+.empty:hover {
+    background-color: #d5d9db;
+}

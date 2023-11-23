@@ -1,0 +1,112 @@
+.profile-bg-outline {
+    display: flex;
+    background-image: linear-gradient(
+        72deg, #f0f6, #f006, #f806, #ff26
+    );
+    border-color: #000;
+    border-style: solid;
+    background-size: cover;
+    background-position: center;
+    gap: 20px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.profile-bg-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 25px;
+    gap: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.pd-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.pd-compact-profile {
+    width: 50%;
+    background-image: linear-gradient(90deg, #8881 15%, #8883 50%, #8881 85%);
+    filter: drop-shadow(-1px 1px 5px #88a4);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 1200px) {
+    .pd-top {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .pd-compact-profile {
+        width: 100% !important;
+    }
+    .statbox-container {
+        width: 100% !important;
+        padding: 5px 0;
+    }
+}
+
+.pd-bottom {
+    border-top: 1px solid #8888;
+    padding-top: 5px;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+/*flex-row padding-x-20px align-center justify-evenly width-100 border-box*/
+.statbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    width: 50%;
+    flex-grow: 1;
+}
+
+.profile-statbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.stat-figure {
+    font-family: var(--displayFont);
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+}
+.stat-label {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.green-gradient-text {
+    background: linear-gradient(72deg, #03cd43, #007e89);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.orange-gradient-text {
+    background: linear-gradient(72deg, #ffd738, rgb(216, 160, 4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.purple-gradient-text {
+    background: linear-gradient(72deg, #a600ff, #7007c6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

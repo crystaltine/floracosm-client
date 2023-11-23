@@ -1,0 +1,84 @@
+.legal-page-body {
+  display: flex;
+  gap: var(--_120px_6_padding);
+  padding: var(--_120px_6_padding);
+  font-family: var(--paragraphFont);
+  position: relative;
+  min-height: 100%;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.legal-sidebar {
+  height: calc(100vh - 2 * var(--_120px_6_paddingHorizontal) - var(--menuBarHeight));
+  top: calc(var(--menuBarHeight) + var(--_120px_6_paddingHorizontal));
+  box-sizing: border-box;
+}
+.legal-sidebar-inner {
+  width: max-content;
+  max-width: 300px;
+}
+@media screen and (max-width: 768px) {
+  .legal-sidebar {
+    display: none !important;
+  }
+}
+
+.legal-page-body ul {
+    list-style-type: square;
+    font-family: var(--paragraphFont);
+}
+.legal-page-body ul > li > ul {
+    list-style-type: circle;
+    font-family: var(--paragraphFont);
+}
+.legal-page-body ul > li > ul > li > ul {
+    list-style-type: square;
+    font-family: var(--paragraphFont);
+}
+.legal-page-body ol li {
+    font-family: var(--paragraphFont);
+}
+
+[data-custom-class='body'], [data-custom-class='body'] * {
+  background: transparent !important;
+  font-family: var(--paragraphFont);
+}
+[data-custom-class='title'], [data-custom-class='title'] *, rulestitle {
+  font-family: var(--displayFont);
+  font-size: 50px !important;
+  color: #000 !important;
+}
+[data-custom-class='subtitle'], [data-custom-class='subtitle'] *, rulessubtitle {
+  font-family: var(--displayFont);
+  color: #595959 !important;
+  font-size: 20px !important;
+}
+[data-custom-class='heading_1'], [data-custom-class='heading_1'] *, .legal-page-body h1 {
+  font-family: var(--displayFont);
+  font-size: 24px !important;
+  color: #000 !important;
+}
+[data-custom-class='heading_2'], [data-custom-class='heading_2'] *, .legal-page-body h2 {
+  font-family: var(--displayFont);
+  font-size: 18px !important;
+  color: #000000 !important;
+}
+
+[data-custom-class='body_text'], [data-custom-class='body_text'] *, .legal-page-body p {
+  color: #595959 !important;
+  font-size: 16px !important;
+  font-weight: 500;
+  font-family: var(--paragraphFont);
+}
+[data-custom-class='link'], [data-custom-class='link'] * {
+  color: var(--linkColor) !important;
+  font-size: 16px !important;
+  font-family: var(--paragraphFont);
+  word-break: break-word !important;
+  text-decoration: none;
+}
+[data-custom-class='link']:hover, [data-custom-class='link'] *:hover {
+  font-family: var(--paragraphFont);
+  text-decoration: underline !important;
+}
