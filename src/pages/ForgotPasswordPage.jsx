@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/account/PreAccount.css'
 import MenuBar from '../components/MenuBar';

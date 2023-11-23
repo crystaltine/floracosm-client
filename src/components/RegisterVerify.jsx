@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/account/PreAccount.css';
 
@@ -82,7 +83,7 @@ const RegisterVerify = (props) => {
 				return;
 			}
 		})
-		.catch(error => {
+		.catch(() => {
 			setMessage('There was an error while contacting the server. Try again in a bit!');
 			setLoading(false);
 			return;
