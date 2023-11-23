@@ -57,7 +57,7 @@ const YoutubeSelector = ({currLink, setCurrLink, currVideoData, setCurrVideoData
 			setFindVideoMessage(null);
 		})
 		.catch(err => {
-			console.log(err);
+			// console.log(err);
 			setFindVideoMessage('Yikes! Couldn\'t fetch the video data.');
 		});
 	}, [setCurrVideoData]);

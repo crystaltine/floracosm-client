@@ -17,13 +17,10 @@ const HomePage = (props) => {
     fetch('https://floracosm-server.azurewebsites.net/site-stats')
       .then(res => res.json())
       .then(data => {
-        if (!data || !data.success) {
-          console.log('Error getting site stats')
-          return
-        }
+        if (!data || !data.success) { return }
         setStats(data.data)
       })
-      .catch(err => console.log(err))
+      .catch(err => {})
   }, []);
 
   return (

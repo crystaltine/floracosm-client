@@ -74,7 +74,7 @@ const LoginPage = () => {
 		.catch((error) => {
 			setMessage('There was an error trying to log in - the server is likely unreachable. Try again in a bit!');
 			setLoading(false);
-			console.error('login error:', error);
+			// console.error('login error:', error);
 		});
 	}
 

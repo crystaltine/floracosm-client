@@ -40,7 +40,7 @@ const SpotlightChat = () => {
 			}
 		})
 		.catch(err => {
-			console.log(err);
+			// console.log(err);
 			setChatAuthMessage('Yikes! There was an error connecting.');
 		});
 	}, []);

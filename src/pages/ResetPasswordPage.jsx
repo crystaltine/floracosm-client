@@ -60,7 +60,6 @@ const ResetPasswordPage = () => {
 			setCompState('default');
 		})
 		.catch(error => {
-			console.log(error);
 			setCompState('checkError');
 		})
 	}, [])

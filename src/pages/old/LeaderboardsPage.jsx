@@ -15,7 +15,6 @@ const LeaderbordsPage = (props) => {
   // Scroll to bottom whenever loadLimit is updated
   React.useEffect(() => {
     lbRef.current.scrollTop = lbRef.current.scrollHeight;
-    console.log("Scrollheight is " + lbRef.current.scrollHeight)
   }, [loadLimit]);
 
   return (

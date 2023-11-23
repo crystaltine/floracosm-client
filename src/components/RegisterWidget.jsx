@@ -84,7 +84,7 @@ const RegisterWidget = (props) => {
 				})
 				.then(response => {
 					if (response.status >= 500) {
-						console.error('Create account error:', response.error);
+						// console.error('Create account error:', response.error);
 						setMessage('Error creating account! Try again in a bit!');
 						setLoading(false);
 					}
@@ -93,35 +93,34 @@ const RegisterWidget = (props) => {
 				.then(data => {
 
 					if (!data || !data.success) {
-						console.error('Create account error:', data.error);
+						// console.error('Create account error:', data.error);
 						setMessage('Error creating account! Try again in a bit!');
 						setLoading(false);
 						return;
 					}
 
-					console.log('Create account success:', data);
+					// console.log('Create account success:', data);
 					// window.location.href = '/account/login?created=true'; Old (no email verif)
 					props.setEnteredEmail(formData.email)
 					props.setEnteredPassword(formData.password)
 					props.setNeedsVerification(true)
 				})
 				.catch((error) => {
-					console.error('Create account error:', error);
+					// console.error('Create account error:', error);
 					setMessage('Error creating account! Try again in a bit!');
 					setLoading(false);
 				});
 
 			})
 			.catch((error) => {
-				console.error('Checking email available error:', error);
-				setMessage('There was an error while checking email availability.');
+				// console.error('Checking email available error:', error);
+				setMessage('An error occured while checking email availability! Try again in a bit!');
 				setLoading(false);
 			});
 
 		})
 		.catch((error) => {
-			console.error('Checking username available error:', error);
-			setMessage('There was an error while checking username availability.');
+			setMessage('An error occured while checking username availability! Try again in a bit!');
 			setLoading(false);
 		});
 	}

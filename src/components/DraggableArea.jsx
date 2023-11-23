@@ -1,8 +1,4 @@
-import React, { useRef, useState } from 'react';
-
 const DraggableArea = ({ containerRef, position, setPosition, zoom, setZoom, children }) => {
-	console.log("Position: ", position.x, position.y
-	)
   return (
     <div
 		ref={containerRef}

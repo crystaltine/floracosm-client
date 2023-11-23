@@ -47,7 +47,7 @@ export function logOut() {
   })
   .then(response => response.json())
   .then(data => {
-    console.log('logout response:', data);
+    // console.log('logout response:', data);
     window.location.href = '/?loggedOut=true';
   })
 }

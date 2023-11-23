@@ -104,7 +104,6 @@ const AccountPage = () => {
 		// Don't send if displayName is <3 or >32 characters
 		if (data.displayName && (data.displayName.length < 3 || data.displayName.length > 32)) {
 			setMessage({...message, userData: 'Display name must be between 3 and 32 characters.'})
-			console.log(`userData dispayName: ${userData.displayName}`)
 			setUserData(oldUserData);
 			setVisiblePopup('data-change-error');
 			return;
@@ -131,7 +130,7 @@ const AccountPage = () => {
 		})
 		.then(srv_data => {
 			if (!srv_data || !srv_data.success) {
-				console.error('Error saving user data:', srv_data.error);
+				// console.error('Error saving user data:', srv_data.error);
 				setMessage({...message, userData: srv_data.message || "Error saving user data! Try again in a bit!"})
 				setVisiblePopup('data-change-error');
 				setUserData(oldUserData);
@@ -149,7 +148,7 @@ const AccountPage = () => {
 				})
 				.then(res => {
 					if (res.status >= 500) {
-						console.error('Error getting user display data:', res.error);
+						// console.error('Error getting user display data:', res.error);
 						return;
 					}
 					return res.json();
@@ -163,7 +162,7 @@ const AccountPage = () => {
 					setUserData(prev => ({...prev, ...srv_data2.data}));
 				})
 				.catch(error => {
-					console.error('Error contacting server for user display data:', error);
+					// console.error('Error contacting server for user display data:', error);
 				});
 			}
 
@@ -172,7 +171,7 @@ const AccountPage = () => {
 
 		})
 		.catch(error => {
-			console.error('Error contacting server to save user data:', error);
+			// console.error('Error contacting server to save user data:', error);
 			setMessage({...message, userData: 'An error happened when trying to reach the server. Try again in a bit!'})
 			setVisiblePopup('data-change-error');
 			setUserData(oldUserData);
@@ -207,7 +206,7 @@ const AccountPage = () => {
 				// Not logged in
 				window.location.href = '/account/login';
 			} else if (res.status >= 500) {
-				console.error('Error changing username:', res);
+				// console.error('Error changing username:', res);
 
 				setUsername(userData.username); // back to original username in the input field
 				setLoading({...loading, username: false})
@@ -217,7 +216,7 @@ const AccountPage = () => {
 		})
 		.then(data => {
 			if (!data || !data.success) {
-				console.error('Error changing username:', data);
+				// console.error('Error changing username:', data);
 				setUsername(userData.username); // back to original username in the input field
 				setLoading({...loading, username: false})
 				setMessage({...message, username: data.message || "Error changing username! Try again in a bit!"})
@@ -226,13 +225,12 @@ const AccountPage = () => {
 			// Username successfully changed
 			setUserData(prev => ({...prev, username: data.newUsername, usernameLastUpdated: data.usernameLastUpdated}));
 			setUsername(data.newUsername);
-			console.log(`response from /change-username! ${JSON.stringify(data)}`)
 			localStorage.setItem('username', data.newUsername);
 			setLoading({...loading, username: false})
 			setMessage({...message, username: null});
 		})
 		.catch(error => {
-			console.error('Error contacting server to change username:', error);
+			// console.error('Error contacting server to change username:', error);
 			setUsername(userData.username); // back to original username in the input field
 			setLoading({...loading, username: false})
 		});
@@ -270,7 +268,7 @@ const AccountPage = () => {
 				// Not logged in
 				window.location.href = '/account/login';
 			} else if (res.status >= 500) {
-				console.error('Error changing password:', res);
+				// console.error('Error changing password:', res);
 				setMessage({...message, password: 'Error changing password! Try again in a bit!'});
 				setLoading({...loading, password: false})
 				return;
@@ -279,7 +277,7 @@ const AccountPage = () => {
 		})
 		.then(data => {
 			if (!data || !data.success) {
-				console.error('Error changing password:', data);
+				// console.error('Error changing password:', data);
 				setMessage({...message, password: data.message || "Error changing password! Try again in a bit!"});
 				setLoading({...loading, password: false})
 				return;
@@ -294,7 +292,7 @@ const AccountPage = () => {
 			setConfirmNewPassword('');
 		})
 		.catch(error => {
-			console.error('Error contacting server to change password:', error);
+			// console.error('Error contacting server to change password:', error);
 			setMessage({...message, password: 'Error contacting server! Try again in a bit!'});
 			setLoading({...loading, password: false})
 		});
@@ -323,7 +321,7 @@ const AccountPage = () => {
 				// Not logged in
 				window.location.href = '/account/login';
 			} else if (res.status >= 500) {
-				console.error('Error getting user data:', res.error);
+				// console.error('Error getting user data:', res.error);
 				return;
 			}
 			return res.json();
@@ -331,16 +329,15 @@ const AccountPage = () => {
 		.then(data => {
 
 			if (!data || !data.success) {
-				console.error('Error getting user data:', data.error);
+				// console.error('Error getting user data:', data.error);
 				return;
 			}
 
-			console.log(`response from /get-user-data! ${JSON.stringify(data)}`)
 			setUserData(data.data);
 			setUsername(data.data.username);
 		})
 		.catch(error => {
-			console.error('Error contacting server for user data:', error);
+			// console.error('Error contacting server for user data:', error);
 		});
 
 		fetch('https://floracosm-server.azurewebsites.net/get-past-payments', {
@@ -353,7 +350,7 @@ const AccountPage = () => {
 		})
 		.then(data => {
 			if (!data || !data.success) {
-				console.error('Error getting past payments:', data.error);
+				// console.error('Error getting past payments:', data.error);
 				setPastPaymentsError(data? data.message : "An unexpected error occured while fetching your past payments.");
 				return;
 			}
@@ -362,7 +359,7 @@ const AccountPage = () => {
 			setPastPaymentsError(null);
 		})
 		.catch(error => {
-			console.error('Error contacting server for past payments:', error);
+			// console.error('Error contacting server for past payments:', error);
 		});
 	}, []);
 
@@ -530,7 +527,7 @@ const AccountPage = () => {
 								placeholder='Display Name'
 								maxLength={32}
 								requiresEdit={true}
-								onClickDone={(value) => {console.log(`curr (onClickDone) userdata Displayname: ${userData.displayName}`); pushChanges({displayName: value}, true)}}/>
+								onClickDone={(value) => {pushChanges({displayName: value}, true)}}/>
 
 								<div className='flex-column font-size-12px'>
 									<TextInput
