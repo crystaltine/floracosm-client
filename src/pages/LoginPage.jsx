@@ -2,11 +2,15 @@ import React from 'react';
 import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
+import { API, isDevEnv } from '../utils';
+import { setTabIcon } from '../App';
+
 const validator = require('email-validator');
 
 const LoginPage = () => {
 
 	document.title = 'Login | Floracosm';
+	setTabIcon();
 
 	function submitForm() {
 
@@ -26,17 +30,20 @@ const LoginPage = () => {
 			return;
 		}
 
-		fetch('https://floracosm-server.azurewebsites.net/login', {
+		// This must allow cookies to be set from https://floracosm-server.azurewebsites.net/login
+		// in production environment
+		fetch(API(isDevEnv(), '/login'), {
 			method: 'POST',
-			credentials: 'include',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Credentials': 'true',
 			},
-			body: JSON.stringify({email, password})
+			body: JSON.stringify({email, password}),
+			credentials: 'include'
 		})
 		.then(response => {
 			if (response.status >= 500) {
-				setMessage('There\'s a problem on our end right now... it\'ll probably be fixed soon!');
+				setMessage('An error occured on our end and we couldn\'t log you in... We\'re working on it!');
 				setLoading(false);
 				return;
 			}
@@ -63,10 +70,12 @@ const LoginPage = () => {
 				localStorage.setItem('username', data.data.username);
 
 				// Set accountlessDisplayName in localstorage:submissionState to just Anonymous
-				localStorage.setItem('submissionState', JSON.stringify({
-					...JSON.parse(localStorage.getItem('submissionState')),
-					accountlessDisplayName: 'Anonymous'
-				}));
+				if (!localStorage.getItem('submissionState')) {
+					localStorage.setItem('submissionState', JSON.stringify({
+						...JSON.parse(localStorage.getItem('submissionState')),
+						accountlessDisplayName: 'Anonymous'
+					}));
+				}
 
 				window.location.href = '/account';
 			}

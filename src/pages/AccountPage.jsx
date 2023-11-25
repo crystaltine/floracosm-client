@@ -120,7 +120,7 @@ const AccountPage = () => {
 		.then(res => {
 			if (res.status === 401) {
 				// Not logged in
-				window.location.href = '/account/login';
+				window.location.href = '/account/login?ref=authreject';
 			} else if (res.status >= 500) {
 				setMessage({...message, userData: 'An error happened our end when trying to update your data! We\'re working on it!'})
 				setVisiblePopup('data-change-error');
@@ -204,7 +204,7 @@ const AccountPage = () => {
 		.then(res => {
 			if (res.status === 401) {
 				// Not logged in
-				window.location.href = '/account/login';
+				window.location.href = '/account/login?ref=authreject';
 			} else if (res.status >= 500) {
 				// console.error('Error changing username:', res);
 
@@ -266,7 +266,7 @@ const AccountPage = () => {
 		.then(res => {
 			if (res.status === 401) {
 				// Not logged in
-				window.location.href = '/account/login';
+				window.location.href = '/account/login?ref=authreject';
 			} else if (res.status >= 500) {
 				// console.error('Error changing password:', res);
 				setMessage({...message, password: 'Error changing password! Try again in a bit!'});
@@ -345,7 +345,8 @@ const AccountPage = () => {
 			credentials: 'include',
 		})
 		.then(res => {
-			if (res.status === 401) window.location.href = '/account/login';
+			if (res.status === 401) window.location.href = '/account/login?ref=authreject';
+			else if (res.status >= 500) return;
 			return res.json();
 		})
 		.then(data => {

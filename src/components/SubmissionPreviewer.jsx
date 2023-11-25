@@ -63,7 +63,7 @@ const SubmissionPreviewer = ({
 					</div>
 
 					<div className='amount-text' style={{fontSize: fontSize[2], color: amountColor}}>
-						{denom}{amountAllowed(selectedDonationAmount) ? selectedDonationAmount : "~"}
+						{denom}{amountAllowed(selectedDonationAmount)? selectedDonationAmount : "~"}
 					</div>
 
 				</div>

@@ -28,6 +28,22 @@ export function loginStatus() {
   return false;
 }
 
+export function setTabIcon() {
+	// try fails on mobile
+  try {
+    const headTag = document.querySelector("head");
+
+    const icon = document.createElement("link");
+    const attributeRel = document.createAttribute("rel").value = "icon";
+    const attributeHref = document.createAttribute("href").value = "./logo_v6_square.png";
+
+    icon.setAttributeNode(attributeRel);
+    icon.setAttributeNode(attributeHref);
+
+    headTag.appendChild(icon);
+  } catch (e) {} // ignore on mobile since no tabs
+}
+
 function App() {
 
   React.useEffect(() => {
@@ -46,10 +62,8 @@ function App() {
         <Route path="/contribute" element={<ContributePage />} />
         <Route path='/payment' element={<PaymentPage />} />
         <Route path='/completion' element={<CompletionPage />} />
-        
         <Route path='/about/*' element={<AboutRouter />} />
         <Route path='/account/*' element={<AccountRouter />} />
-        {/*<Route path='/spotlight' element={<SpotlightPage />} />*/}
         <Route path='*' element={<Page404 />} />
       </Routes>
     </div>

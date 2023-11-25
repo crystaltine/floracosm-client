@@ -68,3 +68,38 @@ export function getSizeByAmount(amount) {
 	if (amount < 100000) return 9;
 	return 10;
 }
+
+export function isDevEnv() {
+
+    let data;
+    
+    try {
+        data = require('./.env.json');
+    } catch (e) {
+        return false;
+    }
+
+    return data.ENVTYPE === 'dev';
+}
+
+/**
+ * Returns a string for the requested dev API fetch URL
+ * @param {Boolean} dev true for dev (localhost server), false for prod (azure server)
+ * @param {String} endpoint e.g. /login (must start with /)
+ * @param {Object} queryParams e.g. {email: "abc", password: "def"}
+ * @returns {String} e.g. http://localhost:3999/login?email=abc&password=def
+ */
+export function API(dev = true, endpoint = "", queryParams = {}) {
+
+    let str = dev?
+    `http://localhost:3999${endpoint}` :
+    `https://floracosm-server.azurewebsites.net${endpoint}`;
+
+    if (Object.keys(queryParams).length > 0) str += "?";
+
+    for (const [key, value] of Object.entries(queryParams)) {
+        str += `&${key}=${value}`
+    }
+
+    return str;
+}

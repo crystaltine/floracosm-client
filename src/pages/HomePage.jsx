@@ -5,10 +5,12 @@ import MenuBar from '../components/MenuBar';
 import Footer from '../components/Footer';
 import HomepageSitelink from '../components/home/HomepageSitelink';
 import InlineTag from '../components/InlineTag';
+import { setTabIcon } from '../App';
 
 const HomePage = (props) => {
 
   document.title = 'Floracosm';
+  setTabIcon();
 
   // Get stats from server @/site-stats
   const [stats, setStats] = React.useState({})
