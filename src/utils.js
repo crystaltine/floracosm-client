@@ -74,7 +74,7 @@ export function isDevEnv() {
     let data;
     
     try {
-        data = require('./.env.json');
+        data = require('./env.json');
     } catch (e) {
         return false;
     }
