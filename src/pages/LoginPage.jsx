@@ -81,7 +81,7 @@ const LoginPage = () => {
 				// redirect after 3 seconds, test for cookie setting
 				setTimeout(() => {
 					window.location.href = '/account';
-				}, 3000);
+				}, 1500);
 			}
 		})
 		.catch((error) => {
