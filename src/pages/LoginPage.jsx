@@ -30,11 +30,6 @@ const LoginPage = () => {
 			return;
 		}
 
-		// This must allow cookies to be set from https://floracosm-server.azurewebsites.net/login
-		// in production environment
-
-		console.log(`[Info] fetching ${API(isDevEnv(), '/login')}`)
-
 		fetch(API(isDevEnv(), '/login'), {
 			method: 'POST',
 			headers: {
@@ -82,13 +77,12 @@ const LoginPage = () => {
 				// redirect after 3 seconds, test for cookie setting
 				setTimeout(() => {
 					window.location.href = '/account';
-				}, 1500);
+				}, 100);
 			}
 		})
 		.catch((error) => {
-			setMessage('There was an error trying to log in - the server is likely unreachable. Try again in a bit!');
+			setMessage('There was an error trying to log in - the server might be unreachable. Try again in a bit!');
 			setLoading(false);
-			console.error('login error:', error);
 		});
 	}
 

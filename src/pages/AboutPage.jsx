@@ -88,9 +88,7 @@ const AboutPage = () => {
             </div>
             <h2>Incentive</h2>
             <p>
-              You might be here because you care about the future of our planet. But today, few are involved enough to give away their hard-earned money.
-              <br /><br />
-              There just isn't much incentive to get up and do something about global warming. You want me to give away my hard-earned money? In this economy?
+              You might care about the future of our planet. But are you actually involved enough to give away your hard-earned money? For some of you, probably not... You might not feel like you're able to make a dent. There just isn't much incentive to get up and do something about global warming. You want me to give away cash? In this economy?
               <br /><br />
               Floracosm is a collection of individually developed web platforms intended to bring a little more involvement to our collective fight against climate change. Our goal is to give every donation a lasting mark, one that you and the world can see and remember.
             </p>

@@ -92,7 +92,7 @@ export function isDevEnv() {
 export function API(dev = true, endpoint = "", queryParams = {}) {
 
     let str = dev?
-    `http://localhost:3999${endpoint}` :
+    `http://localhost:8080${endpoint}` :
     `https://floracosm-server.azurewebsites.net${endpoint}`;
 
     if (Object.keys(queryParams).length > 0) str += "?";

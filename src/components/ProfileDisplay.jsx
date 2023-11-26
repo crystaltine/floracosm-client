@@ -134,9 +134,10 @@ borderWidth = 5}) => {
 
 				</div>
 
-				<div className='pd-bottom' style={{...bottomStyle, fontSize: fontSizes[4]}}>
-					{userData.bio}
-				</div>
+				{userData.bio && 
+					<div className='pd-bottom' style={{...bottomStyle, fontSize: fontSizes[4]}}>
+						{userData.bio}
+					</div>}
 
 			</div>
 

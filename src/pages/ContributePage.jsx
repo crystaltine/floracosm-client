@@ -289,7 +289,8 @@ const ContributePage = (props) => {
                   <br /><br />
                   If you pick a spot and then change the amount, you will have to select another spot, as your original choice may no longer be available.
                   <br /><br />
-                  {!loginStatus() && `If you are <a className='link' href='/account'>logged in</a>, the amount you donate will be tracked to your account. We recommend you create an account before donating (though it is not required) because without one, you won't be able to see your total impact across donations.`}
+                  {!loginStatus() && 
+                  <p className='mopo'>If you are <a className='link' href='/account'>logged in</a>, the amount you donate will be tracked to your account. We recommend you create an account before donating (though it is not required) because without one, you won't be able to see your total impact across donations.</p>}
                 </div>
 
               </div>

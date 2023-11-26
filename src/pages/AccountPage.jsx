@@ -610,13 +610,14 @@ const AccountPage = () => {
 									value={confirmNewPassword}
 									onChange={(e) => setConfirmNewPassword(e.target.value)}
 									maxLength={-1} />
-									{((newPassword !== confirmNewPassword) && newPassword.length)?
-									<div className='input-bottom-text flyin-top --too-weak'>
-										Passwords do not match!
-									</div> :
-									<div className='input-bottom-text flyin-top --strong'>
-										Passwords match!
-									</div>}
+									{newPassword.length > 0 &&
+										((newPassword !== confirmNewPassword))?
+										<div className='input-bottom-text flyin-top --too-weak'>
+											Passwords do not match!
+										</div> :
+										<div className='input-bottom-text flyin-top --strong'>
+											Passwords match!
+										</div>}
 									
 								</div>
 
