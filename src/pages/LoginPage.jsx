@@ -32,12 +32,13 @@ const LoginPage = () => {
 
 		// This must allow cookies to be set from https://floracosm-server.azurewebsites.net/login
 		// in production environment
+
+		console.log(`[Info] fetching ${API(isDevEnv(), '/login')}`)
+
 		fetch(API(isDevEnv(), '/login'), {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Access-Control-Allow-Credentials': 'true',
-				'Access-Control-Allow-Origin': 'https://floracosm-server.azurewebsites.net'
 			},
 			body: JSON.stringify({email, password}),
 			credentials: 'include'
@@ -87,7 +88,7 @@ const LoginPage = () => {
 		.catch((error) => {
 			setMessage('There was an error trying to log in - the server is likely unreachable. Try again in a bit!');
 			setLoading(false);
-			// console.error('login error:', error);
+			console.error('login error:', error);
 		});
 	}
 
