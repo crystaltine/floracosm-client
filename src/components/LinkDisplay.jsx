@@ -4,14 +4,14 @@ import '../styles/general/LinkDisplay.css';
 const copy_icon = require('../assets/icons/copy_icon.png');
 const checkmark_icon = require('../assets/icons/checkmark_icon.png');
 
-const LinkDisplay = ({ link, bgColor }) => {
+const LinkDisplay = ({ link, bgColor, fontSize = 16 }) => {
 
   const [showingCheckmark, setShowingCheckmark] = React.useState(false);
 
   return (
     <div className='link-display-container' style={{ backgroundColor: bgColor }}>
       <div className='link-display-textbox'>
-        <div className='link-display-text'>
+        <div className='link-display-text' style={{ fontSize: `${fontSize}px` }}>
           {link}
         </div>
       </div>

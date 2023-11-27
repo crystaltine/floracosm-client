@@ -4,6 +4,7 @@ import SubmissionPreviewer from './SubmissionPreviewer';
 import ExploreSideviewStat from './ExploreSideviewStat';
 import LinkDisplay from './LinkDisplay';
 import ProfileDisplay from './ProfileDisplay';
+import { sf } from '../utils';
 
 const ExploreSideview = ({ visible, innerRef, submissionData, closeSideview }) => {
 
@@ -32,8 +33,8 @@ const ExploreSideview = ({ visible, innerRef, submissionData, closeSideview }) =
 						postText={submissionData.entry.postText}
 						denom='$'
 						selectedDonationAmount={submissionData.entry.amount} 
-						fontSize={[24, 16, 36, 14]}
-						avatarSize={50}
+						fontSize={sf([28, 18, 36, 16])}
+						avatarSize={sf(55)}
 						padding={0}
 						topStyle={{width: '100%', display: 'block'}}
 						amountColor='rgb(216, 181, 8)' />
@@ -44,26 +45,26 @@ const ExploreSideview = ({ visible, innerRef, submissionData, closeSideview }) =
 							<ProfileDisplay
 							userData={submissionData.profile}
 							size={['100%', 'auto']}
-							pfpSize={60}
+							pfpSize={sf(60)}
 							borderWidth={5}
 							topStyle={{
 								flexDirection: 'column',
 								alignItems: 'center',
 								justifyContent: 'center',
-								rowGap: 10,
+								rowGap: sf(10),
 							}}
 							innerStyle={{ padding: '10px' }}
 							compactProfileStyle={{width: '100%'}}
 							compactProfileContainerStyle={{width: '100%', padding: 5}}
 							statboxContainerStyle={{width: '100%'}}
-							fontSizes={[28, 12, 30, 15, 15]} /> :
+							fontSizes={sf([36, 15, 30, 18, 15])} /> :
 							<div className='info-message'>This contribution was made by someone who is either unregistered or has chosen to hide their profile stats.</div>}
 						</div>
 
 						<div className='explore-page-sideview-info'>
 							<div className='font-size-18px font-weight-700'>Download</div>
 							<a href={submissionData.entry.imageRef} download={true} className='link-invis hover-text-decoration-none width-100'>
-								<button className='button-primary button-medium width-100 flex-gap-2px font-size-14px center-children'>
+								<button style={{fontSize: sf(16)}} className='button-primary button-medium width-100 flex-gap-2px center-children'>
 									<img src={require('../assets/icons/download.png')} alt='dl' className='image-20px' />
 									Download Image
 								</button>
@@ -72,7 +73,7 @@ const ExploreSideview = ({ visible, innerRef, submissionData, closeSideview }) =
 
 						<div className='explore-page-sideview-info'>
 
-							<div className='font-size-18px font-weight-700'>Details</div>
+							<div className='font-weight-700 font-size-18px'>Details</div>
 
 							<ExploreSideviewStat
 							title='Submission Date'
@@ -104,6 +105,7 @@ const ExploreSideview = ({ visible, innerRef, submissionData, closeSideview }) =
 							<div className='font-size-18px font-weight-700'>Permanent Link</div>
 							<LinkDisplay 
 							bgColor='#656a7240'
+							fontSize={sf(16)}
 							link={`https://floracosm.org/canvasearth?year=${new Date(Math.round(submissionData.entry.timestamp)).getFullYear()}&focus=${submissionData.entry.intentID}`} />
 						</div>
 

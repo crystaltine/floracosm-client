@@ -59,7 +59,7 @@ const SpotlightChat = () => {
 
 		const id = crypto.randomUUID();
 
-		const socket = io('ws://localhost:3999', {
+		const socket = io('ws://localhost:8080', {
 			extraHeaders: {
 				"client-id": id
 			}

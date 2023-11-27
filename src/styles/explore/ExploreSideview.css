@@ -31,21 +31,6 @@
     animation: 0.3s cubic-bezier( 0.22, 0.88, 0.2, 1 ) 0s 1 slideInFromRight;
 }
 
-/* On small width and large height make it come up from the bottom */
-@media screen and (max-width: 1000px) and (min-height: 750px) {
-    .explore-page-sideview {
-        top: unset !important;
-        bottom: 0;
-        height: var(--exploreSideviewHeight);
-        right: 0;
-        left: 0;
-        width: 100% !important;
-        border-top: 1px solid #fff1;
-        border-left: none !important;
-        animation: 0.3s cubic-bezier( 0.22, 0.88, 0.2, 1 ) 0s 1 slideInFromBottom;
-    }
-}
-
 .explore-page-sideview-header {
     display: flex;
     flex-direction: row;
@@ -139,6 +124,42 @@
 .ess-stat-value {
     font-size: 14px;
     font-weight: 500;
+}
+
+/* On small width and large height make it come up from the bottom */
+@media screen and (max-width: 800px) {
+    .explore-page-sideview {
+        display: flex;
+        flex-direction: column;
+        height: 100% !important;
+        top: unset !important;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100% !important;
+        border-top: 1px solid #fff1;
+        border-left: none !important;
+        animation: 0.3s cubic-bezier( 0.22, 0.88, 0.2, 1 ) 0s 1 slideInFromBottom;
+    }
+    .ess-stat-box {
+        flex-direction: column;
+        width: 100% !important;
+        padding: 8px !important;
+    }
+    .ess-stat-title {
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        gap: 5px !important;
+        width: 100%;
+    }
+    .ess-stat-icon {
+        width: 18px;
+    }
+    .ess-stat-value {
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+    }
 }
 
 /* Content section error */

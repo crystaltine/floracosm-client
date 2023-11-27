@@ -116,18 +116,18 @@
     position: absolute;
     top: 0;
     left: 0;
-    margin: var(--scaled20) 0 0 var(--scaled20);
+    margin: var(--ec-scaledbutton) 0 0 var(--ec-scaledbutton);
     display: flex;
-    gap: calc(var(--scaled20) * 0.5);
+    gap: calc(var(--ec-scaledbutton) * 0.5);
     align-items: center;
     justify-content: center;
     z-index: 3;
-    font-size: calc(var(--scaled20) * 0.8);
+    font-size: calc(var(--ec-scaledbutton) * 0.8);
     user-select: none;
 }
 .ep-year-indicator {
-    padding: calc(var(--scaled20) * 0.4) calc(var(--scaled20) * 1.5);
-    font-size: calc(var(--scaled20) * 0.8);
+    padding: calc(var(--ec-scaledbutton) * 0.4) calc(var(--ec-scaledbutton) * 1.5);
+    font-size: calc(var(--ec-scaledbutton) * 0.8);
     font-weight: 600;
     font-family: var(--paragraphFont);
     border-radius: 1000px;
@@ -140,5 +140,5 @@
 }
 .ep-year-indicator:hover {
     background-color: rgba(40, 56, 98, 0.533);
-    box-shadow: 0 0 0 calc(var(--scaled20) * 0.1) var(--primaryColorTransparent);
+    box-shadow: 0 0 0 calc(var(--ec-scaledbutton) * 0.1) var(--primaryColorTransparent);
 }

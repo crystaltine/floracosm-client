@@ -1,5 +1,6 @@
 :root {
-    --scaled20: min(25px, 4vmin);
+    --ec-scaledbutton: min(30px, 3vmax);
+    --ec-scaledbuttonLess: min(20px, 2vmax);
 }
 
 .explore-controls-container {
@@ -7,17 +8,19 @@
     bottom: 0;
     left: 0;
     z-index: 4;
-    padding: 0 0 var(--scaled20) var(--scaled20);
+    padding: 0 0 var(--ec-scaledbuttonLess) var(--ec-scaledbuttonLess);
     user-select: none;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--scaled20) * 0.5);
+    gap: calc(var(--ec-scaledbutton) * 0.5);
 }
 
 .ec-button {
-    border-radius: 50%;
-    width: calc(var(--scaled20) * 2);
-    height: calc(var(--scaled20) * 2);
+    border-radius: 1000px;
+    height: fit-content;
+    width: fit-content;
+    margin: 0;
+    padding: calc(var(--ec-scaledbutton) * 0.4);
     background-color: #0004;
     border: none;
     cursor: pointer;
@@ -28,11 +31,11 @@
 }
 .ec-button:hover {
     background-color: rgba(40, 56, 98, 0.533);
-    box-shadow: 0 0 0 calc(var(--scaled20) * 0.1) var(--primaryColorTransparent);
+    box-shadow: 0 0 0 calc(var(--ec-scaledbutton) * 0.1) var(--primaryColorTransparent);
 }
 .ec-btn-disabled {
     cursor: default;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 .ec-btn-disabled:hover {
     background-color: #0004 !important;
@@ -41,14 +44,10 @@
 
 .ec-btn-icon {
     filter: invert(1);
-    width: var(--scaled20);
+    width: var(--ec-scaledbutton);
 }
 
 .ec-info {
-    font-size: calc(var(--scaled20) * 0.7);
+    font-size: calc(var(--ec-scaledbuttonLess));
     color: #8888;
-}
-
-.ec-vslider {
-    transform: rotate(270deg);
 }

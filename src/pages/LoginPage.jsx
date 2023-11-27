@@ -65,6 +65,7 @@ const LoginPage = () => {
 				localStorage.setItem('displayName', data.data.displayName);
 				localStorage.setItem('avatarRef', data.data.avatarRef);
 				localStorage.setItem('username', data.data.username);
+				console.log(`Nice! You've been logged in. displayName: ${data.data.displayName}, avatarRef: ${data.data.avatarRef}, username: ${data.data.username}`)
 
 				// Set accountlessDisplayName in localstorage:submissionState to just Anonymous
 				if (!localStorage.getItem('submissionState')) {
@@ -74,7 +75,6 @@ const LoginPage = () => {
 					}));
 				}
 
-				// redirect after 3 seconds, test for cookie setting
 				setTimeout(() => {
 					window.location.href = '/account';
 				}, 100);

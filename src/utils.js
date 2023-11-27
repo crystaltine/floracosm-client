@@ -87,7 +87,7 @@ export function isDevEnv() {
  * @param {Boolean} dev true for dev (localhost server), false for prod (azure server)
  * @param {String} endpoint e.g. /login (must start with /)
  * @param {Object} queryParams e.g. {email: "abc", password: "def"}
- * @returns {String} e.g. http://localhost:3999/login?email=abc&password=def
+ * @returns {String} e.g. http://localhost:8080/login?email=abc&password=def
  */
 export function API(dev = true, endpoint = "", queryParams = {}) {
 
@@ -100,6 +100,25 @@ export function API(dev = true, endpoint = "", queryParams = {}) {
     for (const [key, value] of Object.entries(queryParams)) {
         str += `&${key}=${value}`
     }
-
+    
     return str;
+}
+
+/**
+ * Scales font size based on window size.
+ * 
+ * If window width > 1300, returns same
+ * If window width > 800, returns 0.8x
+ * else, returns 0.65x
+ * 
+ * @param {Number | Array} size default pixel size of font, or array of font sizes (will scale all)
+ * @returns {Number | Array} scaled pixel size of font (multiplied by some scalar, detailed above)
+ */
+export function sf(size) {
+
+    if (Array.isArray(size)) return size.map(s => sf(s));
+
+    if (window.innerWidth > 1300) return size;
+    if (window.innerWidth > 800) return size * 0.9;
+    return size * 0.8;
 }

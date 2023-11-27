@@ -56,7 +56,7 @@ Basically bootleg bootstrap/tailwind (lol)
     --menuBarHeight: min(60px, 20vh);
     --homepagePanelWidth: min(1800px, 100%);
     --exploreSideviewWidth: min(500px, 90%);
-    --exploreSideviewheight: 70%;
+    --exploreSideviewheight: 100%;
 
     --_120px_6_padding: min(120px, 6%);
     --_120px_6_paddingHorizontal: min(120px, 6vw);
@@ -71,6 +71,7 @@ Basically bootleg bootstrap/tailwind (lol)
     --scaled15px: min(15px, 1.5%);
     --scaled20px: min(20px, 2%);
     --scaled25px: min(25px, 2.5%);
+    --scaled30px: min(30px, 3%);
     --scaled50px: min(50px, 5%);
     --scaled100px: min(100px, 10%);
     --scaled150px: min(150px, 15%);
