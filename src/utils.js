@@ -71,7 +71,11 @@ export function getSizeByAmount(amount) {
 
 export function isDevEnv() {
 
-    if (process.env.APPSETTING_ENVTYPE === 'prod') return false;
+    if (
+        process.env.APPSETTING_ENVTYPE === 'prod' ||
+        process.env.ENVTYPE === 'prod' ||
+        process.env.NODE_ENV === 'production'        
+    ) return false;
 
     let data;
     try {
