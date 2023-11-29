@@ -237,7 +237,7 @@ const MenuBar = (props) => {
             )).map((link, index) => {
 
             return (
-              <a href={link.url} key={index}>
+              <a className='menuburger-link' href={link.url} key={index}>
                 {link.name}
               </a>
             )
@@ -246,14 +246,14 @@ const MenuBar = (props) => {
 
           {loginStatus()?
             <>
-              <a href='/account'>Account</a>
+              <a href='/account' className='menuburger-link'>Account</a>
               <div className='hml-logout-button-container'>
                 <button className='width-100 button-danger button-medium font-size-18px' onClick={() => logOut()}>Log out</button>
               </div>
             </> :
             <>
-              <a href='/account/login'>Log In</a>
-              <a href='/account/register'>Create Account</a>
+              <a href='/account/login' className='menuburger-link'>Log In</a>
+              <a href='/account/register' className='menuburger-link'>Create Account</a>
             </>
           }
 
