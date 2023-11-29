@@ -81,12 +81,6 @@ const MenuBar = (props) => {
     };
 
     window.addEventListener('resize', handleResize);
-    
-    if (!loginStatus()) {
-      localStorage.removeItem('displayName');
-      localStorage.removeItem('username');
-      localStorage.removeItem('avatarRef');
-    }
 
     return () => {
       window.removeEventListener('resize', handleResize);

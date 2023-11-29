@@ -48,14 +48,8 @@ const LoginPage = () => {
 		})
 		.then(data => {
 
-			if (!data) {
-				setMessage('There was an error retrieving data from the server. Try again in a bit!');
-				setLoading(false);
-				return;
-			}
-
-			if (!data.success) {
-				setMessage(data.message);
+			if (!data || !data.success) {
+				setMessage(data.message || 'There was an error retrieving data from the server. Try again in a bit!');
 				setLoading(false);
 				return;
 			} else {
