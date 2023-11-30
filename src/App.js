@@ -51,6 +51,7 @@ function App() {
       localStorage.removeItem('displayName');
       localStorage.removeItem('username');
       localStorage.removeItem('avatarRef');
+      console.log('Logged out!')
     }
   }, []);
 
