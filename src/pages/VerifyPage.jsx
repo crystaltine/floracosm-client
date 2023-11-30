@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
+import { setTabInfo } from '../utils';
 
 const pageDisplays = {
 	loading: {
@@ -93,8 +94,6 @@ const VerifyPageButton = ({ type, text, link, onRetryClick }) => {
 
 const VerifyPage = () => {
 
-	document.title = 'Verify Email | Floracosm';
-
   const URLParams = new URLSearchParams(window.location.search);
 	const token = URLParams.get('token');
 
@@ -161,6 +160,10 @@ const VerifyPage = () => {
 		tryVerify();
 		
 	}, [token, tryVerify]);
+
+	React.useEffect(() => {
+		setTabInfo('Verify | Floracosm');
+	}, []);
 
   return (
     <div className="generic-page-body">

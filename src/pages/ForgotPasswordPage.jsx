@@ -4,6 +4,7 @@ import '../styles/account/PreAccount.css'
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
 import { validate } from 'email-validator';
+import { setTabInfo } from '../utils';
 
 const responseTypes = {
 	success: "If that email is registered, the instructions were successfully sent!",
@@ -14,8 +15,6 @@ const responseTypes = {
 }
 
 const ForgotPasswordPage = () => {
-
-	document.title = 'Password Reset | Floracosm';
 
 	function sendPasswordResetEmail() {
 
@@ -69,6 +68,10 @@ const ForgotPasswordPage = () => {
 			clearInterval(interval);
 		};
 	}, [cooldownEnd]);
+
+	React.useEffect(() => {
+		setTabInfo('Forgot Password | Floracosm');
+	}, []);
 
   return (
     <div className="generic-page-body">

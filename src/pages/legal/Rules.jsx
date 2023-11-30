@@ -3,8 +3,7 @@ import '../../styles/about/Legal.css';
 import MenuBar from '../../components/MenuBar';
 import Footer from '../../components/Footer';
 import Sidebar from '../../components/Sidebar';
-
-document.title = 'Rules | Floracosm';
+import { setTabInfo } from '../../utils';
 
 const sections = [
 	{display: 'Be a good person', sectionID: 'r1'},
@@ -14,6 +13,10 @@ const sections = [
 ];
 
 const Rules = () => {
+
+	React.useEffect(() => {
+		setTabInfo('Rules | Floracosm');
+	}, []);
 
   return (
     <div className='generic-page-body-expandable'>

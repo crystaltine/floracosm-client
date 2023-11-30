@@ -8,7 +8,7 @@ import ExploreSideview from '../components/ExploreSideview';
 import { LoadingBox } from '../components/LoadingBox';
 import ErrorBox from '../components/ErrorBox';
 import ExploreControls from '../components/ExploreControls';
-import { API, isDevEnv } from '../utils';
+import { API, isDevEnv, setTabInfo } from '../utils';
 
 export const TILE_SIZE = 100; // px side len of each square on the explore grid
 export const EXPLORE_PADDING = 1000; // px padding around the explore grid
@@ -22,8 +22,6 @@ const calcFillColor = (r, c) => {
 }
 
 const ExplorePage = () => {
-
-	document.title = 'CanvasEarth | Floracosm';
 
 	const sideviewRef = React.useRef(null);
 
@@ -118,6 +116,10 @@ const ExplorePage = () => {
   }, [requestedYear]);
 
 	React.useEffect(() => fetchSubmissions(requestedYear), [fetchSubmissions, requestedYear]);
+
+	React.useEffect(() => {
+		setTabInfo('CanvasEarth | Floracosm');
+	}, []);
 	
   return (
     <div className='generic-page-body'>

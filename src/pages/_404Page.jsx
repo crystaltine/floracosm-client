@@ -2,10 +2,13 @@ import React from 'react';
 import '../styles/general/_404Page.css';
 import Footer from '../components/Footer';
 import MenuBar from '../components/MenuBar';
+import { setTabInfo } from '../utils';
 
 const Page404 = () => {
 
-  document.title = '404 | Floracosm';
+  React.useEffect(() => {
+    setTabInfo('404 | Floracosm');
+  }, []);
 
   // future pages are at /spotlight and /predictions
   const isAtFuturePage = window.location.href.endsWith('/spotlight') || window.location.href.endsWith('/predictions');

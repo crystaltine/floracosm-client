@@ -127,3 +127,19 @@ export function sf(size) {
     if (window.innerWidth > 800) return size * 0.9;
     return size * 0.8;
 }
+
+export function setTabInfo(pageTitle) {
+    document.title = pageTitle + ' | Floracosm';
+    try {
+        const headTag = document.querySelector("head");
+    
+        const icon = document.createElement("link");
+        const attributeRel = document.createAttribute("rel").value = "icon";
+        const attributeHref = document.createAttribute("href").value = "./logo_v6_square.png";
+    
+        icon.setAttributeNode(attributeRel);
+        icon.setAttributeNode(attributeHref);
+    
+        headTag.appendChild(icon);
+    } catch (e) {} // ignore on mobile since no tabs
+}

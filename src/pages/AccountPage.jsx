@@ -10,6 +10,8 @@ import ImageCropper from '../components/ImageCropper';
 import PastPaymentItem from '../components/PastPaymentItem';
 import Footer from '../components/Footer';
 import ProfileDisplay from '../components/ProfileDisplay';
+import { loginStatus } from '../App';
+import { setTabInfo } from '../utils';
 const { passwordStrength } = require('check-password-strength')
 
 const passwordStrengthClassnames = ['--too-weak', '--weak', '--medium', '--strong']
@@ -60,8 +62,6 @@ const SelectAllButton = (props) => {
 }
 
 const AccountPage = () => {
-
-	document.title = 'Account | Floracosm';
 
 	function selectAll(optionNames) {
 		optionNames.forEach(name => {
@@ -300,10 +300,12 @@ const AccountPage = () => {
 	React.useEffect(() => {
 
 		// if loginStatus is false, redirect to login page
-		// if (!loginStatus()) {
-		// 	window.location.href = '/account/login?ref=nologinstatus';
-		// 	return;
-		// }
+		if (!loginStatus()) {
+			window.location.href = '/account/login?ref=nologinstatus';
+			return;
+		}
+
+		setTabInfo('Account | Floracosm');
 
 		// Get user data from server.
 		// Auth token is already saved as a httpOnly cookie.

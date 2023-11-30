@@ -2,15 +2,15 @@ import React from 'react';
 import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
-import { API, isDevEnv } from '../utils';
-import { setTabIcon } from '../App';
+import { API, isDevEnv, setTabInfo } from '../utils';
 
 const validator = require('email-validator');
 
 const LoginPage = () => {
 
-	document.title = 'Login | Floracosm';
-	setTabIcon();
+	React.useEffect(() => {
+		setTabInfo('Log In | Floracosm');
+	}, []);
 
 	function submitForm() {
 

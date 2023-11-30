@@ -3,10 +3,9 @@ import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
 import RegisterWidget from '../components/RegisterWidget';
 import RegisterVerify from '../components/RegisterVerify';
+import { setTabInfo } from '../utils';
 
 const RegisterPage = () => {
-	
-	document.title = 'Create Account | Floracosm';
 	
 	const [needsVerification, setNeedsVerification] = React.useState(false);
 
@@ -14,6 +13,10 @@ const RegisterPage = () => {
 	// password is used to authorize resend email APi access, so others can't spam it
 	const [enteredEmail, setEnteredEmail] = React.useState('');
 	const [enteredPassword, setEnteredPassword] = React.useState('');
+
+	React.useEffect(() => {
+		setTabInfo('Create Account | Floracosm');
+	}, []);
 
   return (
 		<div className="generic-page-body">

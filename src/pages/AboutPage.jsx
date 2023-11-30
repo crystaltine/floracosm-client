@@ -4,6 +4,7 @@ import '../styles/general/prebuilt.css';
 import FaqDropdown from '../components/FaqDropdown';
 import MenuBar from '../components/MenuBar';
 import Footer from '../components/Footer';
+import { setTabInfo } from '../utils';
 const validator = require('email-validator');
 
 const topicOptions = [
@@ -18,7 +19,9 @@ const FAQContent = require('../static/FAQs.json')
 
 const AboutPage = () => {
 
-  document.title = 'About | Floracosm';
+  React.useEffect(() => {
+    setTabInfo('About | Floracosm');
+  }, []);
 
   const [contactDetails, setContactDetails] = React.useState({
     topic: '',

@@ -3,6 +3,7 @@ import '../styles/completion/CompletionPage.css';
 import SocialMediaShareButton from '../components/SocialMediaShareButton';
 import LinkDisplay from '../components/LinkDisplay';
 import SubmissionPreviewer from '../components/SubmissionPreviewer';
+import { setTabInfo } from '../utils';
 
 const facebookIcon = require('../assets/social_media/facebook.png');
 const twitterIcon = require('../assets/social_media/twitter.png');
@@ -11,8 +12,6 @@ const snapchatIcon = require('../assets/social_media/snapchat.png');
 const tiktokIcon = require('../assets/social_media/tiktok.png');
 
 const CompletionPage = () => {
-
-  document.title = 'Thank you! | Floracosm';
 
   const [smallSPTextSize, setSmallSPTextSize] = React.useState(window.innerWidth < 800);
 
@@ -57,6 +56,9 @@ const CompletionPage = () => {
   }, [intentID, retryFetchTimeout]);
 
   React.useEffect(() => {
+
+    setTabInfo('Thank You | Floracosm');
+
     const resizeListener = () => {
       setSmallSPTextSize(window.innerWidth < 800);
     };

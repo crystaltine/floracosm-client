@@ -3,6 +3,7 @@ import '../styles/account/PreAccount.css'
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
 import { passwordStrength } from 'check-password-strength';
+import { setTabInfo } from '../utils';
 
 const passwordStrengthClassnames = ['--too-weak', '--weak', '--medium', '--strong']
 const passwordStrengthText = ['Very Weak', 'Weak', 'Medium', 'Strong']
@@ -37,11 +38,11 @@ const displayStates = {
 
 const ResetPasswordPage = () => {
 
-	document.title = 'Password Reset | Floracosm';
-
 	React.useEffect(() => {
 		const URLParams = new URLSearchParams(window.location.search);
 		const token = URLParams.get('token');
+
+		setTabInfo('Reset Password | Floracosm')
 
 		// Verify token
 		fetch(`https://floracosm-server.azurewebsites.net/check-reset-token?token=${token}`)

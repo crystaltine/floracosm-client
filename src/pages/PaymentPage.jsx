@@ -8,6 +8,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import SubmissionPreviewer from '../components/SubmissionPreviewer';
 import { HeaderedPopup } from '../components/CenteredPopup';
 import { LoadingBox } from '../components/LoadingBox';
+import { setTabInfo } from '../utils';
 
 const appearance = {
   rules: {
@@ -34,8 +35,6 @@ const submissionPreviewerSizes = {
 
 const PaymentPage = (props) => {
 
-  document.title = 'Checkout | Floracosm';
-
   const loggedIn = ( 
     localStorage.getItem('username') &&
     localStorage.getItem('displayName') &&
@@ -55,6 +54,8 @@ const PaymentPage = (props) => {
   const [randomCatPhoto, setRandomCatPhoto] = React.useState(null);
 
   React.useEffect(() => {
+
+    setTabInfo('Donate | Floracosm');
 
     fetch('https://cataas.com/cat').then(async (res) => {
       setRandomCatPhoto(res.url);
@@ -192,7 +193,7 @@ const PaymentPage = (props) => {
 
           {randomCatPhoto &&
             <div className='width-100 flex-column align-center'>
-              <p className='margin-0px font-weight-500'>Here's a random cat photo as a thank you :)</p>
+              <p className='margin-top-0px margin-bottom-5px font-weight-500'>Here's a random cat photo as a thank you :)</p>
               <img className='max-width-100 max-height-300px' src={randomCatPhoto} alt='random cat' />
               <p className='margin-0px font-size-12px'>
                 Courtesy of <a className='link' href='https://cataas.com/' target='_blank' rel='noreferrer'>cataas.com</a>

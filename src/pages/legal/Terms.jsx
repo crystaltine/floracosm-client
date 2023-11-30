@@ -3,12 +3,15 @@ import Footer from '../../components/Footer';
 import MenuBar from '../../components/MenuBar';
 import Sidebar from '../../components/Sidebar';
 import '../../styles/about/Legal.css';
+import { setTabInfo } from '../../utils';
 
 const sections = require('../../static/terms_sections.json');
 
 const Terms = () => {
 
-	document.title = 'Terms | Floracosm';
+	React.useEffect(() => {
+		setTabInfo('Terms | Floracosm');
+	}, []);
 
   return (
     <div className='generic-page-body-expandable'>

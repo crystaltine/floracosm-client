@@ -8,7 +8,7 @@ import { HeaderedPopup } from '../components/CenteredPopup';
 import TextInput from '../components/TextInput';
 import ContributeImageEditor from '../components/ContributeImageEditor';
 import ContributeLocationSelector from '../components/ContributeLocationSelector';
-import { getSizeByAmount } from '../utils';
+import { getSizeByAmount, setTabInfo } from '../utils';
 import { loginStatus } from '../App';
 
 const quickDonationOptions = [
@@ -59,8 +59,6 @@ function amountAllowed(amt) {
 }
 
 const ContributePage = (props) => {
-
-  document.title = 'Contribute | Floracosm';
 
   function updateUnlockedPerks(newContributionValue) {
     let newPerkState = [...perkState];
@@ -173,6 +171,10 @@ const ContributePage = (props) => {
     setSubmissionState(submissionState? {...submissionState, x: null, y: null} : null);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submissionState.amount]);
+
+  React.useEffect(() => {
+    setTabInfo('Contribute | Floracosm');
+  }, []);
 
   const uploadImageFromButton = React.useCallback((e) => {
 

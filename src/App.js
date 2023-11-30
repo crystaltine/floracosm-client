@@ -28,31 +28,19 @@ export function loginStatus() {
   return false;
 }
 
-export function setTabIcon() {
-	// try fails on mobile
-  try {
-    const headTag = document.querySelector("head");
-
-    const icon = document.createElement("link");
-    const attributeRel = document.createAttribute("rel").value = "icon";
-    const attributeHref = document.createAttribute("href").value = "./logo_v6_square.png";
-
-    icon.setAttributeNode(attributeRel);
-    icon.setAttributeNode(attributeHref);
-
-    headTag.appendChild(icon);
-  } catch (e) {} // ignore on mobile since no tabs
-}
-
 function App() {
 
   React.useEffect(() => {
-    if (!loginStatus()) {
-      localStorage.removeItem('displayName');
-      localStorage.removeItem('username');
-      localStorage.removeItem('avatarRef');
-      console.log('Logged out!')
-    }
+
+    // delay to allow for loginStatus to be set
+    setTimeout(() => {
+      if (!loginStatus()) {
+        localStorage.removeItem('displayName');
+        localStorage.removeItem('username');
+        localStorage.removeItem('avatarRef');
+        console.log('Logged out!')
+      }
+    }, 2000);
   }, []);
 
   return (

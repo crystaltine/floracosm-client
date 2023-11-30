@@ -3,12 +3,15 @@ import Footer from '../../components/Footer';
 import MenuBar from '../../components/MenuBar';
 import Sidebar from '../../components/Sidebar';
 import '../../styles/about/Legal.css';
+import { setTabInfo } from '../../utils';
 
 const sections = require('../../static/privacy_sections.json');
 
 const Privacy = () => {
 
-	document.title = 'Privacy | Floracosm';
+	React.useEffect(() => {
+		setTabInfo('Privacy | Floracosm');
+	}, []);
 
   return (
     <div className='generic-page-body-expandable'>

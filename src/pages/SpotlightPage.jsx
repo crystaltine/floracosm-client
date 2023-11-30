@@ -10,10 +10,9 @@ import { mediaTypeIcons } from '../components/spotlight/SpotlightMediaHeader';
 import UploadSelector from '../components/spotlight/bidPopupTypes/UploadSelector';
 import YoutubeSelector from '../components/spotlight/bidPopupTypes/YoutubeSelector';
 import TwitchSelector from '../components/spotlight/bidPopupTypes/TwitchSelector';
+import { setTabInfo } from '../utils';
 
 const SpotlightPage = () => {
-
-	document.title = 'Spotlight | Floracosm';
 
 	const bidPanelRef = React.useRef(null);
 	const [bidPanelHeight, setEditorPanelHeight] = React.useState(300);
@@ -148,6 +147,10 @@ const SpotlightPage = () => {
 		window.addEventListener('mouseup', mouseUpHandler);
 	}, []);
 	*/
+
+	React.useEffect(() => {
+		setTabInfo('Spotlight | Floracosm');
+	}, []);
 
   return (
     <div className='generic-page-body'>
