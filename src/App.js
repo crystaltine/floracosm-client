@@ -30,19 +30,6 @@ export function loginStatus() {
 
 function App() {
 
-  React.useEffect(() => {
-
-    // delay to allow for loginStatus to be set
-    setTimeout(() => {
-      if (!loginStatus()) {
-        localStorage.removeItem('displayName');
-        localStorage.removeItem('username');
-        localStorage.removeItem('avatarRef');
-        console.log('Logged out!')
-      }
-    }, 2000);
-  }, []);
-
   return (
     <div className="App">
       <Routes>
