@@ -70,7 +70,7 @@ const LoginPage = () => {
 
 				setTimeout(() => {
 					window.location.href = '/account';
-				}, 100);
+				}, 1000);
 			}
 		})
 		.catch((error) => {
