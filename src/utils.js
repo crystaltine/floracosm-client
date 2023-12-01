@@ -129,7 +129,7 @@ export function sf(size) {
 }
 
 export function setTabInfo(pageTitle) {
-    document.title = pageTitle + ' | Floracosm';
+    document.title = pageTitle;
     try {
         const headTag = document.querySelector("head");
     
