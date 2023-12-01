@@ -69,7 +69,7 @@ const LoginPage = () => {
 				}
 
 				setTimeout(() => {
-					window.location.href = '/account';
+					window.location.replace('/account');
 				}, 1000);
 			}
 		})
