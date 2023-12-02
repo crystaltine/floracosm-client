@@ -74,7 +74,6 @@ export function isDevEnv() {
     if (
         process.env.APPSETTING_ENVTYPE === 'prod' ||
         process.env.ENVTYPE === 'prod' ||
-        // process.env.ENVTYPE !== 'dev' ||
         process.env.NODE_ENV === 'production'
     ) return false;
 
