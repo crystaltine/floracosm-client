@@ -18,6 +18,9 @@ import Page404 from './pages/_404Page';
  * @returns {boolean} True if the user is logged in, false otherwise; derived from cookies
  */
 export function loginStatus() {
+
+  console.log(`document cookies: ${document.cookie}`)
+  
   const cookies = document.cookie.split(';').map(cookie => cookie.trim());
 
   for (const cookie of cookies) {
