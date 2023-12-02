@@ -19,16 +19,12 @@ import Page404 from './pages/_404Page';
  */
 export function loginStatus() {
 
-  console.log(`document cookies: ${document.cookie}`)
-  
-  const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-
-  for (const cookie of cookies) {
-    const [cookieName, cookieValue] = cookie.split('=').map(part => part.trim());
-    if (cookieName === 'LoggedIn') return cookieValue === 'true';
-  }
-
-  return false;
+  // Check if info is in localStorage
+  return (
+    localStorage.getItem('displayName') &&
+    localStorage.getItem('username') &&
+    localStorage.getItem('avatarRef')
+  )
 }
 
 function App() {

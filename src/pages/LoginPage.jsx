@@ -68,9 +68,9 @@ const LoginPage = () => {
 					}));
 				}
 
-				// setTimeout(() => {
-				// 	window.location.replace('/account');
-				// }, 200);
+				setTimeout(() => {
+					window.location.replace('/account');
+				}, 200);
 			}
 		})
 		.catch((error) => {
