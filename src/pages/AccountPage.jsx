@@ -300,10 +300,10 @@ const AccountPage = () => {
 	React.useEffect(() => {
 
 		// if loginStatus is false, redirect to login page
-		if (!loginStatus()) {
-			window.location.href = '/account/login?ref=nologinstatus';
-			return;
-		}
+		// if (!loginStatus()) {
+		// 	window.location.href = '/account/login?ref=nologinstatus';
+		// 	return;
+		// }
 
 		setTabInfo('Account | Floracosm');
 
