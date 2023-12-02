@@ -10,7 +10,6 @@ import ImageCropper from '../components/ImageCropper';
 import PastPaymentItem from '../components/PastPaymentItem';
 import Footer from '../components/Footer';
 import ProfileDisplay from '../components/ProfileDisplay';
-import { loginStatus } from '../App';
 import { setTabInfo } from '../utils';
 const { passwordStrength } = require('check-password-strength')
 
