@@ -74,7 +74,7 @@ export function isDevEnv() {
     if (
         process.env.APPSETTING_ENVTYPE === 'prod' ||
         process.env.ENVTYPE === 'prod' ||
-        process.env.ENVTYPE !== 'dev' ||
+        // process.env.ENVTYPE !== 'dev' ||
         process.env.NODE_ENV === 'production'
     ) return false;
 
@@ -88,15 +88,40 @@ export function isDevEnv() {
 }
 
 /**
+ * 
+ * @returns {boolean} True if the user is logged in, false otherwise; derived from cookies
+ */
+export function loginStatus() {
+
+    console.log(`loginStatus() cookies: ${document.cookie}`);
+  
+    // Check if LoggedIn cookie is 'true'
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      const [key, value] = cookie.split('=');
+      if (key.trim() === 'LoggedIn' && value.trim() === 'true') return true;
+    }
+
+    console.log(`loginStatus() AFTER cookies: ${document.cookie}`)
+
+    // Check if info is in localStorage
+    return (
+        localStorage.getItem('displayName') &&
+        localStorage.getItem('username') &&
+        localStorage.getItem('avatarRef')
+    )
+}
+
+/**
  * Returns a string for the requested dev API fetch URL
  * @param {Boolean} dev true for dev (localhost server), false for prod (azure server)
  * @param {String} endpoint e.g. /login (must start with /)
  * @param {Object} queryParams e.g. {email: "abc", password: "def"}
  * @returns {String} e.g. http://localhost:8080/login?email=abc&password=def
  */
-export function API(dev = true, endpoint = "", queryParams = {}) {
+export function API( endpoint = "", queryParams = {}) {
 
-    let str = dev?
+    let str = isDevEnv()?
     `http://localhost:8080${endpoint}` :
     `https://floracosm-server.azurewebsites.net${endpoint}`;
 

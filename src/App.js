@@ -13,20 +13,6 @@ import AccountRouter from './routers/AccountRouter';
 //import SpotlightPage from './pages/SpotlightPage';
 import Page404 from './pages/_404Page';
 
-/**
- * 
- * @returns {boolean} True if the user is logged in, false otherwise; derived from cookies
- */
-export function loginStatus() {
-
-  // Check if info is in localStorage
-  return (
-    localStorage.getItem('displayName') &&
-    localStorage.getItem('username') &&
-    localStorage.getItem('avatarRef')
-  )
-}
-
 function App() {
 
   return (

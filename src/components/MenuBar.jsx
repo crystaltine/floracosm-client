@@ -1,7 +1,7 @@
 import React from 'react';
-import { loginStatus } from '../App';
 import '../styles/general/MenuBar.css';
 import InlineTag from './InlineTag';
+import { API, loginStatus } from '../utils';
 
 const logo_img = require('../assets/logo_v6_square.png');
 const hamburger_menu_threshold = 1300;
@@ -33,12 +33,8 @@ const links = [
 ];
 
 export function logOut() {
-  localStorage.removeItem('displayName');
-  localStorage.removeItem('username');
-  localStorage.removeItem('avatarRef');
-
   // Send logout request to server. It should clear the cookie that stores the JWT token
-  fetch('https://floracosm-server.azurewebsites.net/logout', {
+  fetch(API('/logout'), {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -47,9 +43,15 @@ export function logOut() {
   })
   .then(response => response.json())
   .then(data => {
-    // console.log('logout response:', data);
+    localStorage.removeItem('displayName');
+    localStorage.removeItem('username');
+    localStorage.removeItem('avatarRef');
     window.location.href = '/?loggedOut=true';
   })
+  .catch(err => {
+    console.error(err);
+    alert('Error logging out. Try again in a bit!');
+  });
 }
 
 /**

@@ -8,7 +8,7 @@ import ExploreSideview from '../components/ExploreSideview';
 import { LoadingBox } from '../components/LoadingBox';
 import ErrorBox from '../components/ErrorBox';
 import ExploreControls from '../components/ExploreControls';
-import { API, isDevEnv, setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 export const TILE_SIZE = 100; // px side len of each square on the explore grid
 export const EXPLORE_PADDING = 1000; // px padding around the explore grid
@@ -52,7 +52,7 @@ const ExplorePage = () => {
 
 		// If requestedFocus is specified but no year, fetch submission first, then determine year and redirect
 		if (requestedFocus && !requestedYear) {
-			fetch(API(isDevEnv(), '/year-of', { intentID: requestedFocus }), {
+			fetch(API('/year-of', { intentID: requestedFocus }), {
 				method: 'GET',
 				headers: { 'Content-Type': 'application/json' }
 			})
@@ -91,7 +91,7 @@ const ExplorePage = () => {
 		setLoadingSubmissions(true);
 		setMessage(null);
 
-    fetch(API(isDevEnv(), '/get-contributions', { year }), {
+    fetch(API('/get-contributions', { year }), {
 			method: 'GET',
 			headers: { 'Content-Type': 'application/json' }
 		})

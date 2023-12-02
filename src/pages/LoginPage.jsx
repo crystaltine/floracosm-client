@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
-import { API, isDevEnv, setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const validator = require('email-validator');
 
@@ -30,7 +30,7 @@ const LoginPage = () => {
 			return;
 		}
 
-		fetch(API(isDevEnv(), '/login'), {
+		fetch(API('/login'), {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

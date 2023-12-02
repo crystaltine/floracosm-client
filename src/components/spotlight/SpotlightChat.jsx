@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/spotlight/SpotlightChat.css';
 import ChatMessage from './ChatMessage';
-import { loginStatus } from '../../App';
+import { loginStatus } from '../../utils';
 const io = require('socket.io-client');
 
 const SpotlightChat = () => {

@@ -10,7 +10,7 @@ import ImageCropper from '../components/ImageCropper';
 import PastPaymentItem from '../components/PastPaymentItem';
 import Footer from '../components/Footer';
 import ProfileDisplay from '../components/ProfileDisplay';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 const { passwordStrength } = require('check-password-strength')
 
 const passwordStrengthClassnames = ['--too-weak', '--weak', '--medium', '--strong']
@@ -309,7 +309,7 @@ const AccountPage = () => {
 		// Get user data from server.
 		// Auth token is already saved as a httpOnly cookie.
 
-		fetch('https://floracosm-server.azurewebsites.net/get-user-data', {
+		fetch(API('/get-user-data'), {
 			method: 'GET',
 			credentials: 'include',
 			headers: {
