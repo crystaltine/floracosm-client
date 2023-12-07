@@ -68,9 +68,10 @@ const LoginPage = () => {
 					}));
 				}
 
-				setTimeout(() => {
-					window.location.replace('/account');
-				}, 200);
+				// set a document cookie `LoggedIn` for the session
+				document.cookie = 'LoggedIn=true; path=/';
+
+				window.location.replace('/account');
 			}
 		})
 		.catch((error) => {

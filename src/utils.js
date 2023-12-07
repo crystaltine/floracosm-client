@@ -91,9 +91,6 @@ export function isDevEnv() {
  * @returns {boolean} True if the user is logged in, false otherwise; derived from cookies
  */
 export function loginStatus() {
-
-    console.log(`loginStatus() cookies: ${document.cookie}`);
-  
     // Check if LoggedIn cookie is 'true'
     const cookies = document.cookie.split(';');
     for (const cookie of cookies) {
@@ -101,14 +98,7 @@ export function loginStatus() {
       if (key.trim() === 'LoggedIn' && value.trim() === 'true') return true;
     }
 
-    console.log(`loginStatus() AFTER cookies: ${document.cookie}`)
-
-    // Check if info is in localStorage
-    return (
-        localStorage.getItem('displayName') &&
-        localStorage.getItem('username') &&
-        localStorage.getItem('avatarRef')
-    )
+    return false;
 }
 
 /**

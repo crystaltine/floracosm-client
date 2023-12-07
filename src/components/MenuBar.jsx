@@ -46,6 +46,10 @@ export function logOut() {
     localStorage.removeItem('displayName');
     localStorage.removeItem('username');
     localStorage.removeItem('avatarRef');
+
+    // Set cookie 'LoggedIn=true; path=/' to false
+    document.cookie = 'LoggedIn=false; path=/';
+
     window.location.href = '/?loggedOut=true';
   })
   .catch(err => {
