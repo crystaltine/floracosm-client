@@ -103,7 +103,7 @@ const VerifyPage = () => {
 	const [displayName, setDisplayName] = React.useState('');
 
 	const tryVerify = React.useCallback(() => {
-		fetch(`https://floracosm-server.azurewebsites.net/verify-email?token=${token}&caller=register`, {
+		fetch(`https://floracosm-server.azurewebsites.net/verify-email?token=${token}&caller=verify`, {
 			method: 'POST',
 			credentials: 'include',
 			headers: {
@@ -146,6 +146,8 @@ const VerifyPage = () => {
 					accountlessDisplayName: 'Anonymous'
 				}));
 			}
+
+			document.cookie = 'LoggedIn=true; path=/';
 
 		})
 		.catch((e) => { setPageType('error') });
