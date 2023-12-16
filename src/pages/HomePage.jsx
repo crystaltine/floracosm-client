@@ -38,10 +38,9 @@ const HomePage = (props) => {
             Reimagining Climate Fundraising
           </h1>
           <p className='homepage-subtitle'>
-            There is no way to bring our world together than through the internet. Inspired by the&nbsp;
-            <a className='link' href='http://www.milliondollarhomepage.com/' target='_blank' rel='noopener noreferrer'>Million Dollar Homepage</a>
-            &nbsp;and <a className='link' href='https://teamtrees.org/' target='_blank' rel='noopener noreferrer'>TeamTrees</a>,
-            Floracosm is a collection of web platforms that aims to make giving money away more rewarding and collaborative.
+            The Internet is powerful when we stand united.
+            Floracosm is a collection of web platforms that makes fundraising rewarding collaborative.
+            Problems won't solve themselves. Let's do it together.
           </p>
 
           <div className='htc-sitelinks'>
@@ -49,21 +48,21 @@ const HomePage = (props) => {
             imgRef={require('../assets/icons/color_grid.png')}
             link='/canvasearth'
             title='CANVASEARTH'
-            desc='A giant map you can contribute images to by donating! The size of your picture scales with donation amount.'
+            desc='The Global Mural >'
             color="#6b95c1" />
 
             <HomepageSitelink 
             imgRef={require('../assets/icons/stage.png')}
             link=''
             title='SPOTLIGHT'
-            desc='Bid against others for air time on a global stream! Display any video or image for everyone else to see!'
+            desc='One Stream for All >'
             color="#ca5818" />  
 
             <HomepageSitelink 
             imgRef={require('../assets/icons/hourglass.png')}
             link=''
             title='PREDICTIONS'
-            desc='Contribute to predict the future, or show everyone just how much better you think cats are than dogs!'
+            desc='The Internet Argues >'
             color="#57a13c" />
 
           </div>

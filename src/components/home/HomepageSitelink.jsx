@@ -3,14 +3,6 @@ import '../../styles/home/HomepageSitelink.css';
 
 const HomepageSitelink = ({title, desc, link, color, imgRef}) => {
 
-	if (window.innerWidth < 1200) {
-		return (
-			<a className='hpsl-wrapper' href={link}>
-				<img className='hpsl-image' src={imgRef} alt={`icon-${title}`}/>
-			</a>
-		)
-	}
-
   return (
 		<a className='hpsl-wrapper' href={link}>
 			<div className='hpsl-outline-provider'>
