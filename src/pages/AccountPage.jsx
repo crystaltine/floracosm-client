@@ -10,7 +10,7 @@ import ImageCropper from '../components/ImageCropper';
 import PastPaymentItem from '../components/PastPaymentItem';
 import Footer from '../components/Footer';
 import ProfileDisplay from '../components/ProfileDisplay';
-import { API, setTabInfo } from '../utils';
+import { API, loginStatus, setTabInfo } from '../utils';
 const { passwordStrength } = require('check-password-strength')
 
 const passwordStrengthClassnames = ['--too-weak', '--weak', '--medium', '--strong']
@@ -107,7 +107,7 @@ const AccountPage = () => {
 			return;
 		}
 
-		fetch('https://floracosm-server.azurewebsites.net/update-user-data', {
+		fetch(API('/update-user-data'), {
 			method: 'POST',
 			credentials: 'include',
 			headers: {
@@ -137,7 +137,7 @@ const AccountPage = () => {
 
 			if (refetchDisplayData) {
 				// Refetch display data if username changed, etc. (For menubar and other quick displays)
-				fetch(`https://floracosm-server.azurewebsites.net/get-user-data?email=${userData.email}`, {
+				fetch(API('/get-user-data', {email: userData.email}), {
 					method: 'GET',
 					credentials: 'include',
 					headers: {
@@ -193,7 +193,8 @@ const AccountPage = () => {
 		}
 
 		setLoading({...loading, username: true})
-		fetch('https://floracosm-server.azurewebsites.net/change-username', {
+
+		fetch(API('/change-username'), {
 			method: 'POST',
 			credentials: 'include',
 			headers: { 'Content-Type': 'application/json' },
@@ -255,7 +256,8 @@ const AccountPage = () => {
 
 		// Send request, then set error message based on response, or set success message
 		setLoading({...loading, password: true})
-		fetch('https://floracosm-server.azurewebsites.net/change-password', {
+
+		fetch(API('/change-password'), {
 			method: 'POST',
 			credentials: 'include',
 			headers: { 'Content-Type': 'application/json' },
@@ -299,10 +301,12 @@ const AccountPage = () => {
 	React.useEffect(() => {
 
 		// if loginStatus is false, redirect to login page
-		// if (!loginStatus()) {
-		// 	window.location.href = '/account/login?ref=nologinstatus';
-		// 	return;
-		// }
+		setTimeout(() => {
+			if (!loginStatus()) {
+				window.location.href = '/account/login?ref=nologinstatus';
+				return;
+			}
+		}, 500);
 
 		setTabInfo('Account | Floracosm');
 
@@ -337,10 +341,10 @@ const AccountPage = () => {
 			setUsername(data.data.username);
 		})
 		.catch(error => {
-			// console.error('Error contacting server for user data:', error);
+			setVisiblePopup('init-fetch-error');
 		});
 
-		fetch('https://floracosm-server.azurewebsites.net/get-past-payments', {
+		fetch(API('/get-past-payments'), {
 			method: 'GET',
 			credentials: 'include',
 		})
@@ -360,7 +364,8 @@ const AccountPage = () => {
 			setPastPaymentsError(null);
 		})
 		.catch(error => {
-			// console.error('Error contacting server for past payments:', error);
+			// console.error('Error contacting server to get past payments:', error);
+			setPastPaymentsError("An unexpected error occured while fetching your past payments.");
 		});
 	}, []);
 
@@ -408,6 +413,8 @@ const AccountPage = () => {
 		)
 	}
 
+	console.log(`newPassword: ${newPassword}, length: ${newPassword.length}, strength: ${strength}`)
+
   return (
 		<div className='generic-page-body'>
 
@@ -418,6 +425,13 @@ const AccountPage = () => {
 			title="File type not allowed!"
 			onClose={() => setVisiblePopup('')}>
 				The only file types that can be uploaded as profile avatars are .jpg, .jpeg, and .png.
+			</HeaderedPopup>
+
+			<HeaderedPopup 
+			visible={visiblePopup === 'init-fetch-error'}
+			title="Error!"
+			onClose={() => setVisiblePopup('')}>
+				There was an error fetching your data from the server. Don't worry - your account is safe. Try again in a bit!
 			</HeaderedPopup>
 
 			{visiblePopup === 'image-cropper' && 
@@ -612,13 +626,13 @@ const AccountPage = () => {
 									onChange={(e) => setConfirmNewPassword(e.target.value)}
 									maxLength={-1} />
 									{newPassword.length > 0 &&
-										((newPassword !== confirmNewPassword))?
+										(((newPassword !== confirmNewPassword))?
 										<div className='input-bottom-text flyin-top --too-weak'>
 											Passwords do not match!
 										</div> :
 										<div className='input-bottom-text flyin-top --strong'>
 											Passwords match!
-										</div>}
+										</div>)}
 									
 								</div>
 

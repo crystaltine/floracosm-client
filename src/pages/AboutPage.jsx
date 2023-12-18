@@ -4,7 +4,7 @@ import '../styles/general/prebuilt.css';
 import FaqDropdown from '../components/FaqDropdown';
 import MenuBar from '../components/MenuBar';
 import Footer from '../components/Footer';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 const validator = require('email-validator');
 
 const topicOptions = [
@@ -50,7 +50,7 @@ const AboutPage = () => {
       return
     }
 
-    fetch(`https://floracosm-server.azurewebsites.net/contact`, {
+    fetch(API('/contact'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

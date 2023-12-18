@@ -5,25 +5,26 @@ import MenuBar from '../components/MenuBar';
 import Footer from '../components/Footer';
 import HomepageSitelink from '../components/home/HomepageSitelink';
 import InlineTag from '../components/InlineTag';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const HomePage = (props) => {
-
-  React.useEffect(() => {
-    setTabInfo('Home | Floracosm');
-  }, []);
-
+  
   // Get stats from server @/site-stats
   const [stats, setStats] = React.useState({})
 
   React.useEffect(() => {
-    fetch('https://floracosm-server.azurewebsites.net/site-stats')
-      .then(res => res.json())
-      .then(data => {
-        if (!data || !data.success) { return }
-        setStats(data.data)
-      })
-      .catch(err => {})
+
+    setTabInfo('Floracosm');
+
+    fetch(API('/site-stats'))
+    .then(res => res.json())
+    .then(data => {
+      if (!data || !data.success) { return }
+      setStats(data.data)
+    })
+    .catch(err => {
+      console.error(err);
+    })
   }, []);
 
   return (
@@ -62,7 +63,7 @@ const HomePage = (props) => {
             imgRef={require('../assets/icons/hourglass.png')}
             link=''
             title='PREDICTIONS'
-            desc='The Internet Argues >'
+            desc='For Future-seers >'
             color="#57a13c" />
 
           </div>
@@ -142,14 +143,14 @@ const HomePage = (props) => {
               </h1>
             </div>
 
-            <div className='stat-box --sb-orange'>
+            {/*<div className='stat-box --sb-orange'>
               <div className='stat-box-value'>
                 {stats.spotlightViewers ? `${stats.spotlightViewers.toLocaleString()}` : '~'}
               </div>
               <h1 className='stat-box-title'>
                 Spotlight Viewers
               </h1>
-            </div>
+            </div>*/}
 
             <div className='stat-box --sb-yellow'>
               <div className='stat-box-value'>
@@ -208,7 +209,7 @@ const HomePage = (props) => {
             <div className='homepage-project-card'>
               <div>
                 <h1 className='hpc-name'>
-                  Predictions&nbsp;<InlineTag text='Planned' fontSize={12} />
+                  Predictions&nbsp;<InlineTag text='Coming Soon' color='#c1c' backgroundColor='#c0f2' borderColor='#c1c' fontSize={12} />
                 </h1>
                 <p className='hpc-desc'>
                   Weekly polls and predictions held for everyone to participate in. Predictions could be for any length, from a day to a decade! Donate to show the world that Cats are better than Dogs, or to bet on tomorrow's weather!
@@ -239,9 +240,7 @@ const HomePage = (props) => {
             <h1 className='homepage-text-h1'>Goal set for 2050. How Close are we?</h1>
             <p className='homepage-text-p'>
               In 2015, the Paris Agreement was signed by 196 countries. A goal was set to reach net-zero emissions by 2050.
-              To be clear, net-zero does not necessarily require the complete elimination of emissions. 
-              The emissions we do produce must be offset by an equal amount of carbon capture or removal.
-
+              That doesn't necessarily mean we have to stop emitting greenhouse gases - we just have to offset our emissions by removing an equal amount of greenhouse gases from the atmosphere.
               <br /><br />
             </p>
 
@@ -250,11 +249,15 @@ const HomePage = (props) => {
             </h2>
 
             <p className='homepage-text-p'>
-              Not much. In fact, we've actually increased our emissions since 2015. And this is just carbon dioxide.
-              Climate change is about <b>all</b> greenhouse gases; it's about the impacts these emissions have on the environment around us.
-              Global warming is only one part of the problem - but it can be a start to finding our way out.
+              Not exactly much. Since then, global emissions have only increased, while carbon capture and other methods of removing greenhouse gases from the atmosphere are still in their infancy.
+              Recycling and electric cars were important steps toward net-zero, but they won't solve anything alone.
+              We also must accept that we can't just stop emitting greenhouse gases. The real solution to global warming is <b>innovation</b>.
+              The development of cheaper, more efficient emissions-reducing and offsetting technologies is the only way we can begin to turn this around.
               <br /><br />
-              What are we waiting for? 2050 is only a few decades away, and well, we've got a lot of work to do.  
+              And the only way to get there is through copious amounts of good old research.
+              We exist to fund that research.
+              <br /><br />
+              So what are we waiting for? 2050 is only a few decades away, and well, we've got a lot of work to do together. 
             </p>
 
             <iframe 

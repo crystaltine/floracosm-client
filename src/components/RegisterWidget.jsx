@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/account/PreAccount.css';
 import TextInput from '../components/TextInput';
 import SwitchOption from '../components/SwitchOption';
+import { API } from '../utils';
 const validator = require('email-validator');
 const { passwordStrength } = require('check-password-strength')
 
@@ -55,7 +56,7 @@ const RegisterWidget = (props) => {
 		}
 
 		// Check that username is available
-		fetch(`https://floracosm-server.azurewebsites.net/username-available?username=${formData.username}`)
+		fetch(API('/username-available', {username: formData.username}))
 		.then(response => response.json())
 		.then(data => {
 			if (!data.available) {
@@ -65,7 +66,7 @@ const RegisterWidget = (props) => {
 			}
 
 			// Check if email is already registered
-			fetch(`https://floracosm-server.azurewebsites.net/email-available?email=${formData.email}`)
+			fetch(API('/email-available', {email: formData.email}))
 			.then(response => response.json())
 			.then(data => {
 				if (!data.available) {
@@ -75,7 +76,7 @@ const RegisterWidget = (props) => {
 				}
 
 				// Create account
-				fetch('https://floracosm-server.azurewebsites.net/register', {
+				fetch(API('/register'), {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -199,9 +200,11 @@ const RegisterWidget = (props) => {
 					value={formData.passwordConfirm}
 					onChange={(e) => setFormData({...formData, passwordConfirm: e.target.value})} />
 
-					{formData.passwordConfirm && formData.password === formData.passwordConfirm?
+					{formData.passwordConfirm.length > 0 &&
+						(formData.password === formData.passwordConfirm?
 						<div className='input-bottom-text --strong'>Passwords Match!</div> :
-						<div className='input-bottom-text --weak'>Passwords Do Not Match!</div>}
+						<div className='input-bottom-text --weak'>Passwords Do Not Match!</div>)
+					}
 				</div>
 
 				<div className='flex-column flex-gap-10px'>

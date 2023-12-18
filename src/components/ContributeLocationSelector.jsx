@@ -5,7 +5,7 @@ import SubmissionThumbnail from './SubmissionThumbnail';
 import { TILE_SIZE } from '../pages/ExplorePage';
 import ErrorBox from './ErrorBox';
 import { LoadingBox } from './LoadingBox';
-import { convertToCenterCoords, convertToTopLeftCoords, squareOutOfBounds, squaresOverlap } from '../utils';
+import { API, convertToCenterCoords, convertToTopLeftCoords, squareOutOfBounds, squaresOverlap } from '../utils';
 
 /**
  * Basically an emulation of the Explore page, which allows users to select squares on the grid to place their submission
@@ -27,7 +27,7 @@ const ContributeLocationSelector = ({ previewSize, selectedPos, onSelectPos }) =
 	function fetchSubmissions() {
 		setLoadingSubmissions(true);
 		setMessage(null);
-		fetch('https://floracosm-server.azurewebsites.net/get-contributions') // no need to specify year since it needs to be the current year
+		fetch(API('/get-contributions'))
 		.then(res => {
 
 			if (res.status !== 200) {

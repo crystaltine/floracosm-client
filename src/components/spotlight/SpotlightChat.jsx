@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/spotlight/SpotlightChat.css';
 import ChatMessage from './ChatMessage';
-import { loginStatus } from '../../utils';
+import { API, loginStatus } from '../../utils';
 const io = require('socket.io-client');
 
 const SpotlightChat = () => {
@@ -26,7 +26,7 @@ const SpotlightChat = () => {
 
 	const registerSocket = React.useCallback((clientID) => {
 		// Send message to server to register this ID with the httponly cookie
-		fetch(`https://floracosm-server.azurewebsites.net/register-chat-socket?clientID=${clientID}`, {
+		fetch(API('/register-chat-socket', {clientID}), {
 			method: 'GET',
 			credentials: 'include'
 		})

@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
-import { API, setTabInfo } from '../utils';
+import { API, isDevEnv, setTabInfo } from '../utils';
 
 const validator = require('email-validator');
 
@@ -75,6 +75,7 @@ const LoginPage = () => {
 			}
 		})
 		.catch((error) => {
+			if (isDevEnv()) console.log(error.stack);
 			setMessage('There was an error trying to log in - the server might be unreachable. Try again in a bit!');
 			setLoading(false);
 		});

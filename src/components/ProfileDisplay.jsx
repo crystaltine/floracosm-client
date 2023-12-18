@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/general/ProfileDisplay.css';
 import CompactProfile from './CompactProfile';
+import { API } from '../utils';
 
 function getDefaultFontSizes() {
 	if (window.innerWidth > 900) {
@@ -53,7 +54,7 @@ borderWidth = 5}) => {
 	React.useEffect(() => {
 		setLbPos(null);
 		if (autoRequestLbPos) {
-			fetch(`https://floracosm-server.azurewebsites.net/get-lb-pos?username=${userData.username}`)
+			fetch(API('/get-lb-pos', {username: userData.username}))
 			.then(res => res.json())
 			.then(data => {
 				setLbPos(data.lbPos);

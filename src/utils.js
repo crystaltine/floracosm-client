@@ -103,12 +103,11 @@ export function loginStatus() {
 
 /**
  * Returns a string for the requested dev API fetch URL
- * @param {Boolean} dev true for dev (localhost server), false for prod (azure server)
  * @param {String} endpoint e.g. /login (must start with /)
- * @param {Object} queryParams e.g. {email: "abc", password: "def"}
+ * @param {Object} queryParams Object e.g. {email: "abc", password: "def"}
  * @returns {String} e.g. http://localhost:8080/login?email=abc&password=def
  */
-export function API( endpoint = "", queryParams = {}) {
+export function API(endpoint = "", queryParams = {}) {
 
     let str = isDevEnv()?
     `http://localhost:8080${endpoint}` :

@@ -2,6 +2,7 @@ import React from 'react';
 import Cropper from 'react-easy-crop';
 import '../styles/general/ImageCropper.css';
 import { LoadingBox } from './LoadingBox';
+import { API } from '../utils';
 
 function getCroppedImg(imageObj, croppedAreaPixels, callback) {
 	var canvas = document.createElement("canvas");
@@ -30,7 +31,7 @@ const ImageCropper = ({ onSave, onClose, onUploadError, imageRef }) => {
 		formData.append("image", imgFile);
 	
 		// (Filename is determined randomly by server)
-		fetch('https://floracosm-server.azurewebsites.net/upload', {
+		fetch(API('/upload'), {
 			method: 'POST',
 			body: formData
 		})

@@ -4,7 +4,7 @@ import '../styles/account/PreAccount.css'
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
 import { validate } from 'email-validator';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const responseTypes = {
 	success: "If that email is registered, the instructions were successfully sent!",
@@ -29,7 +29,7 @@ const ForgotPasswordPage = () => {
 			return;
 		}
 
-		fetch(`https://floracosm-server.azurewebsites.net/forgot-password`, {
+		fetch(API('/forgot-password'), {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

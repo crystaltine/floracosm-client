@@ -53,6 +53,7 @@ const ExploreSideview = ({ visible, innerRef, submissionData, closeSideview }) =
 								justifyContent: 'center',
 								rowGap: sf(10),
 							}}
+							autoRequestLbPos
 							innerStyle={{ padding: '10px' }}
 							compactProfileStyle={{width: '100%'}}
 							compactProfileContainerStyle={{width: '100%', padding: 5}}

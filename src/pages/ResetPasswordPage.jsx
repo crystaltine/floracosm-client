@@ -3,7 +3,7 @@ import '../styles/account/PreAccount.css'
 import MenuBar from '../components/MenuBar';
 import TextInput from '../components/TextInput';
 import { passwordStrength } from 'check-password-strength';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const passwordStrengthClassnames = ['--too-weak', '--weak', '--medium', '--strong']
 const passwordStrengthText = ['Very Weak', 'Weak', 'Medium', 'Strong']
@@ -45,7 +45,7 @@ const ResetPasswordPage = () => {
 		setTabInfo('Reset Password | Floracosm')
 
 		// Verify token
-		fetch(`https://floracosm-server.azurewebsites.net/check-reset-token?token=${token}`)
+		fetch(API('/check-reset-token', {token}))
 		.then(response => response.json())
 		.then(data => {
 			if (!data || data.type === "server_error") {
@@ -88,7 +88,7 @@ const ResetPasswordPage = () => {
 
 		// Send request
 		setLoading(true);
-		fetch(`https://floracosm-server.azurewebsites.net/reset-password`, {
+		fetch(API('/reset-password'), {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

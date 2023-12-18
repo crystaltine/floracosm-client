@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/account/PreAccount.css';
+import { API } from '../utils';
 
 const states = {
 	initial: {
@@ -55,7 +56,7 @@ const RegisterVerify = (props) => {
 			return;
 		}
 		
-		fetch(`https://floracosm-server.azurewebsites.net/resend-verification-email`, {
+		fetch(API('/reset-verification-email'), {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

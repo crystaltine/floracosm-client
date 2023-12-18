@@ -8,7 +8,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import SubmissionPreviewer from '../components/SubmissionPreviewer';
 import { HeaderedPopup } from '../components/CenteredPopup';
 import { LoadingBox } from '../components/LoadingBox';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const appearance = {
   rules: {
@@ -65,7 +65,7 @@ const PaymentPage = (props) => {
 
   React.useEffect(() => {
 
-    fetch('https://floracosm-server.azurewebsites.net/create-payment-intent', {
+    fetch(API('/create-payment-intent'), {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

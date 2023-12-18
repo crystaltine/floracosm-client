@@ -8,7 +8,7 @@ import { HeaderedPopup } from '../components/CenteredPopup';
 import TextInput from '../components/TextInput';
 import ContributeImageEditor from '../components/ContributeImageEditor';
 import ContributeLocationSelector from '../components/ContributeLocationSelector';
-import { getSizeByAmount, setTabInfo, loginStatus } from '../utils';
+import { getSizeByAmount, setTabInfo, loginStatus, API } from '../utils';
 
 const quickDonationOptions = [
   {
@@ -59,15 +59,6 @@ function amountAllowed(amt) {
 
 const ContributePage = (props) => {
 
-  function updateUnlockedPerks(newContributionValue) {
-    let newPerkState = [...perkState];
-    for (let i = 0; i < newPerkState.length; i++) {
-      newPerkState[i].unlocked = newContributionValue >= costs[i];
-      newPerkState[i].selected = newContributionValue >= costs[i];
-    }
-    setPerkState(newPerkState);
-  }
-
   // To be used by the image uploader - on change, it should send image to db and update the ref here.
   function updateImageRef(newImageRef) {
     setSubmissionState({...submissionState, imageRef: newImageRef});
@@ -88,45 +79,6 @@ const ContributePage = (props) => {
   const [submissionState, setSubmissionState] = React.useState(require('../static/default_card_data.json'))
 
   const [selectedIndex, setSelectedIndex] = React.useState(costs.indexOf(submissionState.amount));
-  const [perkState, setPerkState] = React.useState([
-    {
-      cost: costs[0],
-      desc: 'Listed as a Contributor for this year in the book credits!',
-      unlocked: submissionState.amount >= costs[0],
-      bgcolor: '#0ac0bd',
-    },
-    {
-      cost: costs[1],
-      desc: 'Option to submit a card including a picture, title, and description!',
-      unlocked: submissionState.amount >= costs[1],
-      bgcolor: '#2cd50a',
-    },
-    {
-      cost: costs[2],
-      desc: 'Ability to use colored text and colored backgrounds on your card!',
-      unlocked: submissionState.amount >= costs[2],
-      bgcolor: '#d3c605',
-    },
-    {
-      cost: costs[3],
-      desc: 'Access to 5 Gold Frames and background patterns!',
-      unlocked: submissionState.amount >= costs[3],
-      bgcolor: '#e08a00',
-    },
-    {
-      cost: costs[4],
-      desc: 'Access to 6 Planetary Frames and 12 card effects!',
-      unlocked: submissionState.amount >= costs[4],
-      bgcolor: '#de5854',
-    },
-    {
-      cost: costs[5],
-      desc: '???',
-      unlocked: submissionState.amount >= costs[5],
-      bgcolor: '#df4dce',
-    },
-  ]);
-
   const [errorPopup, setErrorPopup] = React.useState({
     visible: false,
     title: null,
@@ -185,14 +137,15 @@ const ContributePage = (props) => {
         title: 'Invalid File Type',
         content: 'The only file types that can be submitted are .jpg, .jpeg, and .png.',
       });
-      e.target.files[0] = null;
+      // c;ear file input
+      e.target.value = null;
       return;
     }
 
     const formData = new FormData();
     formData.append("image", file);
 
-    fetch("https://floracosm-server.azurewebsites.net/upload", {
+    fetch(API('/upload'), {
       method: "POST",
       body: formData
     }).then((res) => {
@@ -349,7 +302,6 @@ const ContributePage = (props) => {
                     const amt = costs[idx];
                     setSelectedIndex(() => idx);
                     setSubmissionState({...submissionState, amount: amt});
-                    updateUnlockedPerks(amt);
                     customAmtInputRef.current.value = '';
                   }} />
 
@@ -367,7 +319,6 @@ const ContributePage = (props) => {
                       className='custom-donation-input' 
                       onChange={(e) => {
                         setSubmissionState({...submissionState, amount: Number.parseFloat(e.target.value)});
-                        updateUnlockedPerks(e.target.value)
                         setSelectedIndex([1, 5, 20, 50, 100, 1000].indexOf(Number.parseFloat(e.target.value)));
                       }}
                       min='1'

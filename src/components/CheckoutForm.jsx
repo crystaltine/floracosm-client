@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import "../styles/payment/PaymentPage.css";
 import ContributeAgreements from "./ContributeAgreements";
-import { getSizeByAmount } from "../utils";
+import { API, getSizeByAmount } from "../utils";
 import { LoadingBox } from "./LoadingBox";
 
 export default function CheckoutForm(props) {
@@ -43,7 +43,7 @@ export default function CheckoutForm(props) {
 
     // Check for inconsistencies in submission
     // amount to donate must be correct
-    fetch(`https://floracosm-server.azurewebsites.net/payment-intent-values?intentID=${props.intentID}`)
+    fetch(API('/payment-intent-values', {intentID: props.intentID}))
     .then(res => res.json())
     .then((data) => {
 
@@ -64,7 +64,7 @@ export default function CheckoutForm(props) {
         that the data is not tampered with while the
         confirmation or redirect is happening.
         */
-      fetch('https://floracosm-server.azurewebsites.net/create-entry', {
+      fetch(API('/create-entry'), {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -84,7 +84,7 @@ export default function CheckoutForm(props) {
         }
 
         // Last check - endpoint /check-space-availability
-        fetch('https://floracosm-server.azurewebsites.net/check-space-availability', {
+        fetch(API('/check-space-availability'), {
           method: 'POST',
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' },

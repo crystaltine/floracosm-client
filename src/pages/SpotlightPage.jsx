@@ -10,7 +10,7 @@ import { mediaTypeIcons } from '../components/spotlight/SpotlightMediaHeader';
 import UploadSelector from '../components/spotlight/bidPopupTypes/UploadSelector';
 import YoutubeSelector from '../components/spotlight/bidPopupTypes/YoutubeSelector';
 import TwitchSelector from '../components/spotlight/bidPopupTypes/TwitchSelector';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const SpotlightPage = () => {
 
@@ -95,7 +95,7 @@ const SpotlightPage = () => {
 		const formData = new FormData();
     formData.append("file", file);
 
-		fetch('https://floracosm-server.azurewebsites.net/upload-spotlight-media', {
+		fetch(API('/upload-spotlight-media'), {
 			method: 'POST',
 			body: formData,
 		})

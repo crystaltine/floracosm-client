@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/account/PreAccount.css';
 import MenuBar from '../components/MenuBar';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const pageDisplays = {
 	loading: {
@@ -103,7 +103,7 @@ const VerifyPage = () => {
 	const [displayName, setDisplayName] = React.useState('');
 
 	const tryVerify = React.useCallback(() => {
-		fetch(`https://floracosm-server.azurewebsites.net/verify-email?token=${token}&caller=verify`, {
+		fetch(API('/verify-email', {token, caller: 'verify'}), {
 			method: 'POST',
 			credentials: 'include',
 			headers: {

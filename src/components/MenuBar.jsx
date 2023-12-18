@@ -142,6 +142,9 @@ const MenuBar = (props) => {
                 key={index} 
                 className='menu-link-indev'>
                   {link.name}
+                  <div className='menu-link-indev-hoverdesc'>
+                    In Development!
+                  </div>
                 </span>
               );
             }
@@ -228,7 +231,7 @@ const MenuBar = (props) => {
                 <img className='hml-mainitem-img' src={require('../assets/icons/hourglass.png')} alt='predictions' />
                 Predictions
               </div>
-              <InlineTag style={{margin: 0}} text='Planned' color='#b30' backgroundColor='#fdcf' borderColor='#b30' fontSize={12} />
+              <InlineTag style={{margin: 0}} text='Coming Soon' color='#b0d' backgroundColor='#fdff' borderColor='#b0d' fontSize={12} />
               <p className='hml-desc'>
               Contribute to predict the future, or show everyone just how much better you think cats are than dogs!
               </p>

@@ -3,7 +3,7 @@ import '../styles/completion/CompletionPage.css';
 import SocialMediaShareButton from '../components/SocialMediaShareButton';
 import LinkDisplay from '../components/LinkDisplay';
 import SubmissionPreviewer from '../components/SubmissionPreviewer';
-import { setTabInfo } from '../utils';
+import { API, setTabInfo } from '../utils';
 
 const facebookIcon = require('../assets/social_media/facebook.png');
 const twitterIcon = require('../assets/social_media/twitter.png');
@@ -22,13 +22,13 @@ const CompletionPage = () => {
   const [retryFetchTimeout, setRetryFetchTimeout] = React.useState(1000);
 
   React.useEffect(() => {
-        // Get the submission from server to display on right side
-    fetch(`https://floracosm-server.azurewebsites.net/get-single-contribution-display?intentID=${intentID}`)
+    // Get the submission from server to display on right side
+    fetch(API('/get-single-contribution-display', {intentID}))
       .then(res => res.json())
       .then(data => {
         if ((!data || data.error || !data.data) && retryFetchTimeout) {
           const interval = setInterval(() => {
-            fetch(`https://floracosm-server.azurewebsites.net/get-single-contribution-display?intentID=${intentID}`)
+            fetch(API('/get-single-contribution-display', {intentID}))
               .then(res => res.json())
               .then(data => {
                 if (!data || data.error || !data.data) {setRetryFetchTimeout(Math.min(retryFetchTimeout*2, 30000)); return;}

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/general/SubmissionPreviewer.css';
 import { LoadingBox } from './LoadingBox';
+import { API } from '../utils';
 
 /**
  * `onUploadError: (type, title, message) => void`
@@ -22,7 +23,7 @@ const ImageUploadArea = ({ imageRef, updateImageRef, allowUpload, imgSize, borde
     const formData = new FormData();
     formData.append("image", file);
 
-    fetch("https://floracosm-server.azurewebsites.net/upload", {
+    fetch(API('/upload'), {
       method: "POST",
       body: formData
     })
