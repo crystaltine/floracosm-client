@@ -43,7 +43,7 @@ const Footer = () => {
 			</div>
 			
 			<div className='footer-copyright'>
-				&#169; 2023 Floracosm by&nbsp;<a className='link' href='https://github.com/crystaltine' target='_blank' rel="noopener noreferrer">crystaltine</a>
+				&#169; 2024 Floracosm, LLC by&nbsp;<a className='link' href='https://github.com/crystaltine' target='_blank' rel="noopener noreferrer">crystaltine</a>
 			</div>
 		</div>
   );
