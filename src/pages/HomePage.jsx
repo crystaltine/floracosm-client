@@ -39,9 +39,7 @@ const HomePage = (props) => {
             Reimagining Climate Fundraising
           </h1>
           <p className='homepage-subtitle'>
-            The Internet is powerful when we stand united.
-            Floracosm is a collection of web platforms that makes fundraising rewarding collaborative.
-            Problems won't solve themselves. Let's do it together.
+            Floracosm is a 501(c)(3) nonprofit collection of web platforms that makes fundraising rewarding and collaborative.
           </p>
 
           <div className='htc-sitelinks'>
@@ -49,7 +47,7 @@ const HomePage = (props) => {
             imgRef={require('../assets/icons/color_grid.png')}
             link='/canvasearth'
             title='CANVASEARTH'
-            desc='The Global Mural >'
+            desc='A Global Mural >'
             color="#6b95c1" />
 
             <HomepageSitelink 
